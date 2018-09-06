@@ -42,6 +42,7 @@ googleAnalytics = ""
 [social]
   twitter = ""
   github  = "pwntus"
+  repo    = "pwntus/mic-workshops"
   email   = "pontus.edvard@gmail.com"
 
 

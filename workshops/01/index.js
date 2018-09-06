@@ -15,9 +15,9 @@ const api = axios.create({
   }
 })
 
-const sign_in = async () => {
+const main = async () => {
   // Implement me!
 }
 
 // Invoke our program
-sign_in()
+main()

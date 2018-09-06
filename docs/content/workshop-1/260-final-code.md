@@ -1,11 +1,11 @@
 ---
-title: Complete Code
-url: workshop-1/complete-code/
-weight: 240
+title: Final Code
+url: workshop-1/final-code/
+weight: 260
 menu:
   main:
     parent: "Workshop 1: Login"
-    identifier: Complete Code
+    identifier: Final Code
 ---
 
 ```javascript
@@ -18,6 +18,7 @@ const API_URL = ''
 const API_KEY = ''
 const USERNAME = '< your MIC username >'
 const PASSWORD = '< your MIC password >'
+let API_CREDENTIALS = null
 
 // Init HTTP client
 const api = axios.create({
@@ -33,14 +34,29 @@ const main = async () => {
     const response = await api({
       method: 'post',
       url: '/auth/login',
-
+      
       // Add a username/password combination as payload
       data: {
         userName: USERNAME,
         password: PASSWORD
       }
     })
-    console.log('Auth API response:', response.data)
+
+    // Store login credentials for later usage
+    API_CREDENTIALS = response.data.credentials
+
+    // Make a User API GET request to the /users/{userName} endpoint
+    const auth_response = await api({
+      method: 'get',
+      url: '/users/' + USERNAME,
+      
+      // Add authentication headers
+      headers: {
+        Authorization: API_CREDENTIALS.token,
+        identityId: API_CREDENTIALS.identityId
+      }
+    })
+    console.log('User API response:', auth_response.data)
   } catch (e) {
     console.error('An error occured:', e)
   }

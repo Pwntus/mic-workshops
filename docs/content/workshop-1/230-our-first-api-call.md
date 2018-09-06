@@ -17,13 +17,14 @@ You can find the full documentation on the [Auth API here](https://docs.telenorc
 Continue by adding code to `index.js` for our request:
 
 ```javascript
-const sign_in = async () => {
+const main = async () => {
   try {
     // Make a login request
     const response = await api({
       method: 'post',
       url: '/auth/login'
     })
+    console.log('Auth API response:', response.data)
   } catch (e) {
     console.error('An error occured:', e)
   }
@@ -33,24 +34,16 @@ const sign_in = async () => {
 We also need to include a username/password combination as payload:
 
 ```javascript
-const sign_in = async () => {
-  try {
-    // Make a Auth API POST request to the /auth/login endpoint
-    const response = await api({
-      method: 'post',
-      url: '/auth/login',
+const response = await api({
+  method: 'post',
+  url: '/auth/login',
 
-      // Add a username/password combination as payload
-      data: {
-        userName: USERNAME,
-        password: PASSWORD
-      }
-    })
-    console.log('Auth API response:', response.data)
-  } catch (e) {
-    console.error('An error occured:', e)
+  // Add a username/password combination as payload
+  data: {
+    userName: USERNAME,
+    password: PASSWORD
   }
-}
+})
 ```
 
 Run the program:

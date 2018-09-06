@@ -8,9 +8,9 @@ menu:
     identifier: Why use MIC
 ---
 
-So you're probably wondering "what does MIC has to offer for me?".
+You're probably wondering "what does MIC has to offer for me?".
 
-There are several components, both known and unknown to most of us, when creating a full-blown IoT infrastructure. It's easy to say "I'll just spin up a SQL database and pipe all my data to it", but how will you connect your IoT devices through LoRaWAN / NB-IoT, handle realtime updates, structure a fleet of e.g. 100+ IoT devices and query Gigabytes of data stored years ago? MIC has all the answers to these problems.
+There are several components, both known and unknown to most of us, when creating a full-blown IoT infrastructure. It's easy to say "I'll just spin up a SQL database and pipe all my data to it", but how will you connect your IoT devices through LoRaWAN / NB-IoT, handle realtime updates, structure a fleet of e.g. 100+ IoT devices and query gigabytes of data stored years ago? MIC has all the answers to these problems.
 
 ## Storage
 
@@ -20,7 +20,7 @@ The best part: all you have to do is send data to the platform and the rest is h
 
 ## Realtime
 
-MIC maintains a [MQTT broker](https://docs.aws.amazon.com/iot/latest/developerguide/protocols.html) which sits on top of [AWS IoT](https://aws.amazon.com/iot/). What this means is that you can utilize a MQTT client in any language (with support of X.509 certificates for extra security) for both listening on incoming data and send data downlink to your IoT devices.
+MIC maintains a [MQTT broker](https://docs.aws.amazon.com/iot/latest/developerguide/protocols.html) which is part of [AWS IoT](https://aws.amazon.com/iot/). What this means is that you can utilize a MQTT client in any language/platform (supporting X.509 certificates) for both listening on incoming data and send data downlink to your IoT devices.
 
 ## Rules Engine
 

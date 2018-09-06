@@ -4,13 +4,13 @@ url: getting-started/
 weight: 110
 ---
 
-This `Getting Started` section will explain why the Managed IoT Cloud platform (short: MIC) is a powerful tool for managing your IoT infrastructure and why you should consider using it for your projects.
+This section will explain why the Managed IoT Cloud platform (short: MIC) is a powerful tool for managing your IoT infrastructure and why you should consider using it for your projects.
 
 We'll start with a quick background about the MIC platform and who operates it to get you oriented.
 
 ## Telenor Connexion: Development
 
-[Telenor Connexion](https://www.telenorconnexion.com/) is a branch in the Telenor company with its headquarters in Stockholm, Sweden. Telenor Connexion focuses on tailored IoT solutions and are the ones who has built and maintains the MIC platform.
+[Telenor Connexion](https://www.telenorconnexion.com/) is a branch in the Telenor company with its headquarters in Stockholm, Sweden. Telenor Connexion focuses on tailored IoT solutions and maintains the MIC platform.
 
 ## Telenor Start IoT: Norwegian Pilot
 

@@ -18,4 +18,4 @@ Next, navigate to `mic-workshops/workshops/01` and run `npm i`:
 cd mic-workshops/workshops/01 && npm i
 ```
 
-Wait for it to complete before moving on.
+Wait for it to complete before continuing.

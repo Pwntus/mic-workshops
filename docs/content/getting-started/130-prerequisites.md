@@ -28,7 +28,7 @@ Verify your installation:
 nvm --version
 ```
 
-Using NVM, download, compile and install the latest release of Node.js:
+Download, compile and install the latest release of Node.js:
 
 ```sh
 nvm install node
