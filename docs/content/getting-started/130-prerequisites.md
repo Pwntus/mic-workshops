@@ -61,3 +61,7 @@ Verify your installation:
 ```sh
 vue --version
 ```
+
+{{< note title="Verify" >}}
+Verify that you can run **node**, **npm** and **vue** as commands in a terminal before moving on to Workshop 1.
+{{< /note >}}

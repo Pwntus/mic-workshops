@@ -51,7 +51,7 @@ googleAnalytics = ""
   weight = 100
 
 [[menu.main]]
-  name   = "Workshop 1: REST API"
+  name   = "Workshop 1: Login"
   url    = "workshop-1/"
   weight = 200
 

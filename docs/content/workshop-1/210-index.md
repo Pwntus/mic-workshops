@@ -1,9 +1,21 @@
 ---
-title: "Workshop 1: REST API"
+title: "Workshop 1: Login"
 url: workshop-1/
 weight: 210
 ---
 
-## Workshop 1: REST API
+Our first workshop will focus on creating a HTTP client with necessary configurations to make both unauthenticated and authenticated requests.
 
-Idk
+Open a clean directory and clone the working repository:
+
+```sh
+git clone https://github.com/Pwntus/mic-workshops.git
+```
+
+Next, navigate to `mic-workshops/workshops/01` and run `npm i`:
+
+```sh
+cd mic-workshops/workshops/01 && npm i
+```
+
+Wait for it to complete before moving on.
