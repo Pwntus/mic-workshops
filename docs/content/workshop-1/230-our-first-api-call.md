@@ -4,7 +4,7 @@ url: workshop-1/our-first-api-call/
 weight: 230
 menu:
   main:
-    parent: "Workshop 1: Login"
+    parent: "Workshop 1: Creating a API Client"
     identifier: Our first API call
 ---
 

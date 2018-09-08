@@ -4,7 +4,7 @@ url: workshop-1/final-code/
 weight: 260
 menu:
   main:
-    parent: "Workshop 1: Login"
+    parent: "Workshop 1: Creating a API Client"
     identifier: Final Code
 ---
 
@@ -24,6 +24,7 @@ let API_CREDENTIALS = null
 const api = axios.create({
   baseURL: API_URL,
   headers: {
+    // Attach required 'x-api-key' header with every request
     'x-api-key': API_KEY
   }
 })

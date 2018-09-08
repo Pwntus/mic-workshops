@@ -4,7 +4,7 @@ url: workshop-1/complete-code/
 weight: 240
 menu:
   main:
-    parent: "Workshop 1: Login"
+    parent: "Workshop 1: Creating a API Client"
     identifier: Complete Code
 ---
 
@@ -23,6 +23,7 @@ const PASSWORD = '< your MIC password >'
 const api = axios.create({
   baseURL: API_URL,
   headers: {
+    // Attach required 'x-api-key' header with every request
     'x-api-key': API_KEY
   }
 })

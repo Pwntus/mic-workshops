@@ -4,7 +4,7 @@ url: workshop-1/authenticated-api-call/
 weight: 250
 menu:
   main:
-    parent: "Workshop 1: Login"
+    parent: "Workshop 1: Creating a API Client"
     identifier: Authenticated API Call
 ---
 

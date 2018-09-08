@@ -1,4 +1,4 @@
-baseurl = "https://pwntus.github.io/mic-workshops/"
+baseURL = "https://pwntus.github.io/mic-workshops/"
 languageCode = "en-us"
 title = "Managed IoT Cloud Workshops"
 theme = "hugo-material-docs"
@@ -53,9 +53,19 @@ publishDir="../public"
   weight = 100
 
 [[menu.main]]
-  name   = "Workshop 1: Login"
+  name   = "Workshop 1: Creating a API Client"
   url    = "workshop-1/"
   weight = 200
+
+[[menu.main]]
+  name   = "Workshop 2: Using the API"
+  url    = "workshop-2/"
+  weight = 300
+
+[[menu.main]]
+  name   = "Workshop 3: Vue.js"
+  url    = "workshop-3/"
+  weight = 400
 
 
 [blackfriday]
