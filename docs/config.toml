@@ -63,9 +63,14 @@ publishDir="../public"
   weight = 300
 
 [[menu.main]]
-  name   = "Workshop 3: Vue.js"
+  name   = "Workshop 3: MQTT Realtime"
   url    = "workshop-3/"
   weight = 400
+
+[[menu.main]]
+  name   = "Workshop 4: Vue.js"
+  url    = "workshop-4/"
+  weight = 500
 
 
 [blackfriday]

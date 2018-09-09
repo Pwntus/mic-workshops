@@ -12,6 +12,11 @@ We've now logged in a user using the `login()` method of the included API class.
 
 Next we'll list all `Thing Types` available to our currently authorized user. We'll use the [Thing Type LIST](https://docs.telenorconnexion.com/mic/rest-api/thing-type/#list) endpoint to get a list of all `Thing Types`. This is simply done by sending a `GET` method to `/thingtypes`.
 
+Thing Type LIST | 
+--- | ---
+Method | `GET`
+Endpoint | `/thingtypes`
+
 Continue to add code after our `login()` call, using the `invoke()` method:
 
 ```javascript
@@ -45,7 +50,6 @@ const main = async () => {
 
 // Invoke our program
 main()
-
 ```
 
 Run the program:
@@ -53,4 +57,9 @@ Run the program:
 ```sh
 node index.js
 ```
+
 The user should now be logged in and print a list of available `Thing Types`.
+
+{{< note title="Save a Thing Type ID" >}}
+Pick one **Thing Type** from the result and save the ID for the next page when we'll get more info about a **Thing Type**.
+{{< /note >}}
