@@ -1,11 +1,11 @@
 ---
-title: Our first API call
-url: workshop-1/our-first-api-call/
+title: First API call
+url: workshop-1/first-api-call/
 weight: 230
 menu:
   main:
-    parent: "Workshop 1: Creating a API Client"
-    identifier: Our first API call
+    parent: "Workshop 1: Create an API Client"
+    identifier: First API call
 ---
 
 We now have the necessary info to make our first unauthenticated API call. The next step is to authenticate with a username/password combination.

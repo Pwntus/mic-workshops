@@ -1,6 +1,6 @@
 ---
-title: Getting Started
-url: getting-started/
+title: Get Started
+url: get-started/
 weight: 110
 ---
 

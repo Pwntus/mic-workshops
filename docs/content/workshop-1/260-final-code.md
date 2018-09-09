@@ -4,7 +4,7 @@ url: workshop-1/final-code/
 weight: 260
 menu:
   main:
-    parent: "Workshop 1: Creating a API Client"
+    parent: "Workshop 1: Create an API Client"
     identifier: Final Code
 ---
 

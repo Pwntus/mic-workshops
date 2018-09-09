@@ -4,7 +4,7 @@ url: workshop-2/login/
 weight: 320
 menu:
   main:
-    parent: "Workshop 2: Using the API"
+    parent: "Workshop 2: Use the API"
     identifier: Login
 ---
 

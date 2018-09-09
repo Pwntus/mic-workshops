@@ -1,10 +1,10 @@
 ---
 title: Why use MIC
-url: getting-started/why-use-mic/
+url: get-started/why-use-mic/
 weight: 120
 menu:
   main:
-    parent: Getting Started
+    parent: Get Started
     identifier: Why use MIC
 ---
 

@@ -1,11 +1,11 @@
 ---
-title: Configuration
-url: workshop-1/configuration/
+title: Configure
+url: workshop-1/configure/
 weight: 220
 menu:
   main:
-    parent: "Workshop 1: Creating a API Client"
-    identifier: Configuration
+    parent: "Workshop 1: Create an API Client"
+    identifier: Configure
 ---
 
 You should now have a clone of a stub project where we will continue to write code for our first API request.

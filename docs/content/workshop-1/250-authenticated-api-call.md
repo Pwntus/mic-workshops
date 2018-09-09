@@ -1,11 +1,11 @@
 ---
-title: Authenticated API Call
-url: workshop-1/authenticated-api-call/
+title: Authenticate API Call
+url: workshop-1/authenticate-api-call/
 weight: 250
 menu:
   main:
-    parent: "Workshop 1: Creating a API Client"
-    identifier: Authenticated API Call
+    parent: "Workshop 1: Create an API Client"
+    identifier: Authenticate API Call
 ---
 
 All other API endpoints except for `/auth/` and `/metadata` requires a logged in user. As we saw in the previous page, we called `/auth/login`. The response after a successful login contains a `credentials` object with three properties; `identityId`, `token` and `refreshToken`.

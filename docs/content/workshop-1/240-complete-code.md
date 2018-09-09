@@ -4,7 +4,7 @@ url: workshop-1/complete-code/
 weight: 240
 menu:
   main:
-    parent: "Workshop 1: Creating a API Client"
+    parent: "Workshop 1: Create an API Client"
     identifier: Complete Code
 ---
 

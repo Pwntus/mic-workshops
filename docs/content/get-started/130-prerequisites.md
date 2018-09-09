@@ -1,10 +1,10 @@
 ---
 title: Prerequisites
-url: getting-started/prerequisites/
+url: get-started/prerequisites/
 weight: 130
 menu:
   main:
-    parent: Getting Started
+    parent: Get Started
     identifier: Prerequisites
 ---
 

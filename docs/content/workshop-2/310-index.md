@@ -1,5 +1,5 @@
 ---
-title: "Workshop 2: Using the API"
+title: "Workshop 2: Use the API"
 url: workshop-2/
 weight: 310
 ---

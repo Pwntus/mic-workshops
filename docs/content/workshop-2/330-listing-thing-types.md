@@ -1,11 +1,11 @@
 ---
-title: Listing Thing Types
-url: workshop-2/listing-thing-types/
+title: List Thing Types
+url: workshop-2/list-thing-types/
 weight: 330
 menu:
   main:
-    parent: "Workshop 2: Using the API"
-    identifier: Listing Thing Types
+    parent: "Workshop 2: Use the API"
+    identifier: List Thing Types
 ---
 
 We've now logged in a user using the `login()` method of the included API class. This included API class also exposes a `invoke()` method we can use to call the API with the necessary headers included after we've logged in.
