@@ -7,11 +7,13 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
+    "@vuetify/vuex-cognito-module": "^0.2.0",
     "vue": "^2.5.17",
     "vuetify": "^1.0.19",
     "vuex": "^3.0.1"
   },
   "devDependencies": {
+    "@mdi/font": "^2.7.94",
     "@vue/cli-plugin-babel": "^3.0.1",
     "@vue/cli-service": "^3.0.1",
     "pug": "^2.0.3",
