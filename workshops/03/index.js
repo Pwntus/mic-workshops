@@ -1,4 +1,4 @@
-const AWSMqtt = require('aws-mqtt-client')
+const AWSMqtt = require('aws-mqtt-client').default
 const API = require('./api.class.js')
 const myApi = new API()
 

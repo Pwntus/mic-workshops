@@ -1,6 +1,6 @@
 ---
 title: Configure MQTT Client
-url: workshop-3/configure/
+url: workshop-3/configure-mqtt-client/
 weight: 420
 menu:
   main:
@@ -15,7 +15,7 @@ Open `index.js`. You should see the following content:
 ```javascript
 // mic-workshops/workshops/03/index.js
 
-const AWSMqtt = require('aws-mqtt-client')
+const AWSMqtt = require('aws-mqtt-client').default
 const API = require('./api.class.js')
 const myApi = new API()
 
@@ -56,8 +56,8 @@ PASSWORD | `< your MIC password >`
 Insert the values into your program:
 
 ```javascript
-const IOT_ENDPOINT  = 'a3k7odshaiipe8.iot.eu-west-1.amazonaws.com'
-const AWS_REGION  = 'eu-west-1'
-const USERNAME = '< your MIC username >'
-const PASSWORD = '< your MIC password >'
+const IOT_ENDPOINT = 'a3k7odshaiipe8.iot.eu-west-1.amazonaws.com'
+const AWS_REGION   = 'eu-west-1'
+const USERNAME     = '< your MIC username >'
+const PASSWORD     = '< your MIC password >'
 ```
