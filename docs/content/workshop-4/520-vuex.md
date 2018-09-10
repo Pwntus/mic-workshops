@@ -22,7 +22,7 @@ We'll be using the [Vuex Cognito Module](https://github.com/vuetifyjs/vuex-cogni
 
 All we need to do is to provide it the correct configurations to know which Cognito instance to use. Luckily, this is already to for you in this workshop.
 
-If you open `mic-workshops/workshops/04/.env` you'll see this:
+If you open `.env` you'll see this:
 
 ```
 VUE_APP_USER_POOL_ID=eu-west-1_jKaY6EGjT
@@ -33,7 +33,7 @@ VUE_APP_REGION=eu-west-1
 
 These are the configurations needed for our current Cognito instance.
 
-If you open `mic-workshops/workshops/04/src/main.js` you'll see this:
+If you open `src/main.js` you'll see this:
 
 ```javascript
 /* Attach Cognito module to Vuex store.

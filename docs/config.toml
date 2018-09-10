@@ -72,6 +72,11 @@ publishDir="../public"
   url    = "workshop-4/"
   weight = 500
 
+[[menu.main]]
+  name   = "Workshop 5: Vue.js Cont."
+  url    = "workshop-5/"
+  weight = 600
+
 
 [blackfriday]
   smartypants = true

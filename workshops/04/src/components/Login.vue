@@ -26,7 +26,7 @@ v-flex(xs12 sm8 md5)
           :disabled="!form"
           :loading="loading"
           color="primary"
-          @click="submit"
+          @click="login"
           prominent depressed
         ) Login
         v-alert(
@@ -48,6 +48,7 @@ v-flex(xs12 sm8 md5)
 </template>
 
 <script>
+// Import Vuex helpers
 import { mapActions, mapGetters } from 'vuex'
 
 export default {
@@ -61,7 +62,7 @@ export default {
   }),
   computed: mapGetters('Cognito', ['isLoggedIn']),
   methods: {
-    async submit () {
+    async login () {
       // Implement me!
     },
     async logout () {

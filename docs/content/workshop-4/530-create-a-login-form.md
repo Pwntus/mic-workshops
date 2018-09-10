@@ -10,11 +10,16 @@ menu:
 
 With the Cognito Vuex Module in place, let's continue with creating a login form.
 
-Open `mic-workshops/workshops/04/src/components/Login.vue`.
+Open the Login component in `src/components/Login.vue`.
+
+{{< note title="Vue.js Single File Component" >}}
+A Vue.js [Single File Component (SFC)](https://vuejs.org/v2/guide/single-file-components.html) is a **.vue** file which usually contains a **template**, **script** and a **style** section. Only the template is required.
+{{< /note >}}
 
 There's already a `template` and a `script` section setup. We'll continue on the `script` section.
 
 ```javascript
+// Import Vuex helpers
 import { mapActions, mapGetters } from 'vuex'
 
 export default {
@@ -74,3 +79,21 @@ methods: {
   }
 }
 ```
+
+## Run the Web App Locally
+
+To run our little Vue.js web app we'll start a local development server with [hot reloading](https://vue-loader.vuejs.org/guide/hot-reload.html) enabled. This is included in the Vue CLI.
+
+Run the following command in the root of Workshop 4, `mic-workshops/workshops/04`:
+
+```sh
+npm run serve
+```
+
+If all went well you should see a `DONE  Compiled successfully` message in your terminal and be able to access the web app from http://localhost:8080/.
+
+![Vue.js login form](/images/workshop-4-00-webapp.png "Vue.js login form")
+
+Try logging in with your MIC user and see if the user state changes.
+
+Next we'll implement the `logout()` method.
