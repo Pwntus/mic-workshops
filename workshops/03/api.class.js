@@ -1,4 +1,5 @@
 'use strict';
+const AWS = require('aws-sdk');
 const axios = require('axios');
 
 // Config
@@ -16,6 +17,7 @@ module.exports = class API {
       }
     });
     this.credentials = null;
+    this.AWS = AWS;
   }
 
   async login ({ username, password }) {
@@ -35,6 +37,23 @@ module.exports = class API {
       this.api.defaults.headers.common['identityId'] = this.credentials.identityId;
 
       return true;
+    } catch (e) {
+      throw e;
+    }
+  }
+
+  async createCognitoIdentity (token) {
+    try {
+      this.AWS.config.region = AWS_REGION
+      this.AWS.config.credentials = new AWS.CognitoIdentityCredentials({
+        IdentityPoolId: AWS_IDENTITY_POOL,
+        Logins: {
+          [`cognito-idp.${AWS_REGION}.amazonaws.com/${AWS_USER_POOL}`]: token
+        }
+      })
+      await this.AWS.config.credentials.getPromise()
+
+      return this.AWS.config.credentials
     } catch (e) {
       throw e;
     }

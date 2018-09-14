@@ -31,7 +31,7 @@ MQTTClient.on('message', (topic, message) => {
 
 We've added three event listeners, but before we can watch incoming messages we need to subscribe to a `topic`. Enter what's called the [Thing Update API](https://docs.telenorconnexion.com/mic/cloud-api/thing-update/), wich exposes different MQTT topics we can subscribe to.
 
-This API exposes the full underlying AWS IoT MQTT topic structure for a client logged in like we have done (through something called Cognito, but we don't have to worry about that). All client facing topics are qualified by the domain path of the thing.
+This API exposes the full underlying AWS IoT MQTT topic structure for a client logged in like we have done (through Cognito). All client facing topics are qualified by the domain path of the thing.
 
 The topic for incoming messages starts with `thing-update/`, and we append a domain-path after that. E.g. `thing-update/workshop/0000123321` to listen for Thing `0000123321` in the domain `workshop`.
 

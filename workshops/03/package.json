@@ -18,6 +18,7 @@
   "homepage": "https://github.com/Pwntus/mic-workshops#readme",
   "dependencies": {
     "aws-mqtt-client": "0.0.5",
+    "aws-sdk": "^2.315.0",
     "axios": "^0.18.0"
   }
 }

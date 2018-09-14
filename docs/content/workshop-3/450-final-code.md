@@ -28,12 +28,15 @@ const main = async () => {
       password: PASSWORD
     })
 
+    // Create a Cognito Identity before authorizing MQTT client
+    const cognitoIdentity = await myApi.createCognitoIdentity(myApi.credentials.token)
+
     // Instantiate a new MQTT client with configurations
     let MQTTClient = new AWSMqtt({
       region: AWS_REGION,
-      accessKeyId: myApi.credentials.accessKeyId,
-      secretAccessKey: myApi.credentials.secretAccessKey,
-      sessionToken: myApi.credentials.sessionToken,
+      accessKeyId: cognitoIdentity.accessKeyId,
+      secretAccessKey: cognitoIdentity.secretAccessKey,
+      sessionToken: cognitoIdentity.sessionToken,
       endpointAddress: IOT_ENDPOINT,
       maximumReconnectTimeMs: 8000,
       protocol: 'wss'
