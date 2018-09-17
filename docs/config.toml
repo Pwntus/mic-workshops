@@ -53,6 +53,11 @@ publishDir="../public"
   weight = 100
 
 [[menu.main]]
+  name   = "Manifest"
+  url    = "manifest/"
+  weight = 150
+
+[[menu.main]]
   name   = "Workshop 1: Create an API Client"
   url    = "workshop-1/"
   weight = 200
