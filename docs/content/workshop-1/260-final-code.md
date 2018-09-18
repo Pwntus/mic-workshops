@@ -14,8 +14,8 @@ menu:
 const axios = require('axios') // HTTP library
 
 // Insert variables
-const API_URL = ''
-const API_KEY = ''
+const API_URL = 'https://xxxxxxxxxx.execute-api.xx-xxxx-x.amazonaws.com/prod'
+const API_KEY = '< API key>'
 const USERNAME = '< your MIC username >'
 const PASSWORD = '< your MIC password >'
 let API_CREDENTIALS = null

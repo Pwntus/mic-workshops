@@ -2,22 +2,55 @@
 const AWS = require('aws-sdk');
 const axios = require('axios');
 
-// Config
-const API_URL = '';
-const API_KEY = '';
+/* Config.
+ * For the curious ones: These config variables are not some
+ * magical values that appear from thin air. Each MIC instance
+ * has a "manifest", which is a JSON object containing non-static
+ * service configurations. In a real-world case the application
+ * would either load the manifest at launch or save it locally
+ * for later usage.
+ *
+ * The static endpoint for retrieving a MIC manifest is:
+ *
+ *   https://1u31fuekv5.execute-api.eu-west-1.amazonaws.com/prod/manifest/?hostname=<MIC hostname>
+ *
+ * E.g. for Start IoT:
+ *
+ *   https://1u31fuekv5.execute-api.eu-west-1.amazonaws.com/prod/manifest/?hostname=startiot.mic.telenorconnexion.com&
+ */
+const STACK_HOST = 'startiot.mic.telenorconnexion.com';
 
 module.exports = class API {
-  constructor () {
-    // Create an Axios instance
-    this.api = axios.create({
-      baseURL: API_URL,
-      headers: {
-        // Attach required 'x-api-key' header with every request
-        'x-api-key': API_KEY
-      }
-    });
-    this.credentials = null;
-    this.AWS = AWS;
+  constructor (API_KEY) {
+    this.API_KEY = API_KEY
+  }
+
+  async init () {
+    try {
+      this.manifest = await this.fetchManifest();
+
+      // Create an Axios instance
+      this.api = axios.create({
+        baseURL: `${this.manifest.ApiGatewayRootUrl}/prod`,
+        headers: {
+          // Attach required 'x-api-key' header with every request
+          'x-api-key': this.API_KEY
+        }
+      });
+      this.credentials = null;
+      this.AWS = AWS;
+    } catch (e) {
+      throw e;
+    }
+  }
+
+  async fetchManifest () {
+    try {
+      const { data } = await axios.get(`https://1u31fuekv5.execute-api.eu-west-1.amazonaws.com/prod/manifest/?hostname=${STACK_HOST}`);
+      return data;
+    } catch (e) {
+      throw e;
+    }
   }
 
   async login ({ username, password }) {
@@ -44,11 +77,11 @@ module.exports = class API {
 
   async createCognitoIdentity (token) {
     try {
-      this.AWS.config.region = AWS_REGION
+      this.AWS.config.region = this.manifest.Region
       this.AWS.config.credentials = new AWS.CognitoIdentityCredentials({
-        IdentityPoolId: AWS_IDENTITY_POOL,
+        IdentityPoolId: this.manifest.IdentityPool,
         Logins: {
-          [`cognito-idp.${AWS_REGION}.amazonaws.com/${AWS_USER_POOL}`]: token
+          [`cognito-idp.${this.manifest.Region}.amazonaws.com/${this.manifest.UserPool}`]: token
         }
       })
       await this.AWS.config.credentials.getPromise()

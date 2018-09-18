@@ -42,20 +42,20 @@ main()
 
 ## Configure
 
-The first step is to find out the `API_URL` and the `API_KEY`. Every request must have at least the `x-api-key` header included in order for the API to serve the request. I'll describe later how to obtain these values, but you may use the ones listed below for now:
+The first step is to find out the `API_URL` and the `API_KEY`. Every request must have at least the `x-api-key` header included in order for the API to serve the request. You need to find the Manifest and extract `ApiGatewayRootUrl` from there.
 
 Variable | Value
 --- | ---
-API_URL | ``
-API_KEY  | `< from your provider >`
+API_URL | `(from Manifest) ApiGatewayRootUrl/prod`
+API_KEY  | `< ask your provider >`
 USERNAME | `< your MIC username >`
 PASSWORD | `< your MIC password >`
 
 Insert the values into your program:
 
 ```javascript
-const API_URL  = ''
-const API_KEY  = ''
+const API_URL  = 'https://xxxxxxxxxx.execute-api.xx-xxxx-x.amazonaws.com/prod'
+const API_KEY  = '< API key >'
 const USERNAME = '< your MIC username >'
 const PASSWORD = '< your MIC password >'
 ```

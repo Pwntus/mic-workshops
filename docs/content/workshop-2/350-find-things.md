@@ -49,10 +49,11 @@ console.log(result.data.hits.hits)
 
 ```javascript
 const API = require('./api.class.js')
-const myApi = new API()
+const myApi = new API('< API key >')
 
 const main = async () => {
   try {
+    await myApi.init() // Init API (fetch Manifest)
     await myApi.login({
       username: '< your MIC username >',
       password: '< your MIC password >'

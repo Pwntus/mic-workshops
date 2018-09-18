@@ -16,7 +16,7 @@ Open `index.js`. Include the API class and instantiate a new API object:
 // mic-workshops/workshops/02/index.js
 
 const API = require('./api.class.js')
-const myApi = new API()
+const myApi = new API('< API key >')
 ```
 
 ## Login
@@ -26,6 +26,7 @@ The API class has already setup the base URL and API key for us. It also exposes
 ```javascript
 const main = async () => {
   try {
+    await myApi.init() // Init API (fetch Manifest)
     await myApi.login({
       username: '< your MIC username >',
       password: '< your MIC password >'

@@ -1,6 +1,6 @@
 const AWSMqtt = require('aws-mqtt-client').default
 const API = require('./api.class.js')
-const myApi = new API()
+const myApi = new API('< API key >')
 
 // Insert variables
 const IOT_ENDPOINT = ''
@@ -10,6 +10,7 @@ const PASSWORD = ''
 
 const main = async () => {
   try {
+    await myApi.init() // Init API (fetch Manifest)
     await myApi.login({
       username: USERNAME,
       password: PASSWORD

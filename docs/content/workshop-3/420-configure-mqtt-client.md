@@ -44,20 +44,20 @@ main()
 
 ## Configure
 
-The first step is to find out the `IOT_ENDPOINT` and the `AWS_REGION`. These are configurations for our MQTT client, telling it which MQTT broker to use. Use the below values for now:
+The first step is to find out the `IOT_ENDPOINT` and the `AWS_REGION`. These are configurations for our MQTT client, telling it which MQTT broker to use. You need to find the Manifest and extract `IotEndpoint` and `Region` from there.
 
 Variable | Value
 --- | ---
-IOT_ENDPOINT | `a3k7odshaiipe8.iot.eu-west-1.amazonaws.com`
-AWS_REGION  | `eu-west-1`
+IOT_ENDPOINT | `(from Manifest) IotEndpoint`
+AWS_REGION  | `(from Manifest) Region`
 USERNAME | `< your MIC username >`
 PASSWORD | `< your MIC password >`
 
 Insert the values into your program:
 
 ```javascript
-const IOT_ENDPOINT = 'a3k7odshaiipe8.iot.eu-west-1.amazonaws.com'
-const AWS_REGION   = 'eu-west-1'
+const IOT_ENDPOINT = 'xxxxxxxxxxxxxx.iot.xx-xxxx-x.amazonaws.com'
+const AWS_REGION   = 'xx-xxxx-x'
 const USERNAME     = '< your MIC username >'
 const PASSWORD     = '< your MIC password >'
 ```

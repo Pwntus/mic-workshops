@@ -55,16 +55,17 @@ let MQTTClient = new AWSMqtt({
 ```javascript
 const AWSMqtt = require('aws-mqtt-client').default
 const API = require('./api.class.js')
-const myApi = new API()
+const myApi = new API('< API key >')
 
 // Insert variables
-const IOT_ENDPOINT = 'a3k7odshaiipe8.iot.eu-west-1.amazonaws.com'
-const AWS_REGION = 'eu-west-1'
+const IOT_ENDPOINT = 'xxxxxxxxxxxxxx.iot.xx-xxxx-x.amazonaws.com'
+const AWS_REGION = 'xx-xxxx-x'
 const USERNAME = '< your MIC username >'
 const PASSWORD = '< your MIC password >'
 
 const main = async () => {
   try {
+    await myApi.init() // Init API (fetch Manifest)
     await myApi.login({
       username: USERNAME,
       password: PASSWORD

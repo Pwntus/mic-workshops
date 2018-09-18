@@ -1,5 +1,5 @@
 const API = require('./api.class.js')
-const myApi = new API()
+const myApi = new API('< API key >')
 
 const main = async () => {
   try {
