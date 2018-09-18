@@ -16,7 +16,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://pwntus.github.io/mic-workshops/workshop-1/</guid>
-      <description>Our first workshop will focus on creating a HTTP client with necessary configurations to make both unauthenticated and authenticated requests. foo
+      <description>Our first workshop will focus on creating a HTTP client with necessary configurations to make both unauthenticated and authenticated requests.
 Open a clean directory and clone the working repository:
 git clone https://github.com/Pwntus/mic-workshops.git  Next, navigate to mic-workshops/workshops/01 and run npm i:
 cd mic-workshops/workshops/01 &amp;amp;&amp;amp; npm i  Wait for it to complete before continuing.</description>
