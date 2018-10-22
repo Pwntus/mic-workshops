@@ -82,6 +82,11 @@ publishDir="../public"
   url    = "workshop-5/"
   weight = 600
 
+[[menu.device]]
+  name   = "Arduino MKR NB 1500"
+  url    = "arduino-mkr-nb-1500/"
+  weight = 700
+
 
 [blackfriday]
   smartypants = true
