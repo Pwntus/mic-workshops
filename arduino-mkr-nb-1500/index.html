@@ -9,18 +9,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
-    <title>Logout - Managed IoT Cloud Workshops</title>
+    <title>Arduino MKR NB 1500 - Managed IoT Cloud Workshops</title>
     <meta name="generator" content="Hugo 0.40.1" />
 
     
     <meta name="description" content="Easy to follow, step-by-step tutorials for the Telenor Managed IoT Cloud platform.">
     
-    <link rel="canonical" href="https://pwntus.github.io/mic-workshops/workshop-4/logout/">
+    <link rel="canonical" href="https://pwntus.github.io/mic-workshops/arduino-mkr-nb-1500/">
     
     <meta name="author" content="Pontus Edvard Aurdal">
     
 
-    <meta property="og:url" content="https://pwntus.github.io/mic-workshops/workshop-4/logout/">
+    <meta property="og:url" content="https://pwntus.github.io/mic-workshops/arduino-mkr-nb-1500/">
     <meta property="og:title" content="Managed IoT Cloud Workshops">
     <meta property="og:image" content="https://pwntus.github.io/mic-workshops/images/logo.png">
     <meta name="apple-mobile-web-app-title" content="Managed IoT Cloud Workshops">
@@ -96,7 +96,7 @@
     </div>
     <div class="stretch">
       <div class="title">
-        Logout
+        Arduino MKR NB 1500
       </div>
     </div>
 
@@ -205,43 +205,11 @@
 
   <li>
     
-    <a class="active" title="Workshop 4: Vue.js" href="https://pwntus.github.io/mic-workshops/workshop-4/">
+    <a  title="Workshop 4: Vue.js" href="https://pwntus.github.io/mic-workshops/workshop-4/">
       
       Workshop 4: Vue.js
     </a>
 
-    
-      <ul>
-        
-          <li class="anchor">
-            <a  title="Vuex" href="https://pwntus.github.io/mic-workshops/workshop-4/vuex/">
-              
-              Vuex
-            </a>
-          </li>
-        
-          <li class="anchor">
-            <a  title="Create a Login Form" href="https://pwntus.github.io/mic-workshops/workshop-4/create-a-login-form/">
-              
-              Create a Login Form
-            </a>
-          </li>
-        
-          <li class="anchor">
-            <a class="active" title="Logout" href="https://pwntus.github.io/mic-workshops/workshop-4/logout/">
-              
-              Logout
-            </a>
-          </li>
-        
-          <li class="anchor">
-            <a  title="Final Code" href="https://pwntus.github.io/mic-workshops/workshop-4/final-code/">
-              
-              Final Code
-            </a>
-          </li>
-        
-      </ul>
     
   </li>
 
@@ -267,11 +235,29 @@
 
   <li>
     
-    <a  title="Arduino MKR NB 1500" href="https://pwntus.github.io/mic-workshops/arduino-mkr-nb-1500/">
+    <a class="active" title="Arduino MKR NB 1500" href="https://pwntus.github.io/mic-workshops/arduino-mkr-nb-1500/">
       
       Arduino MKR NB 1500
     </a>
 
+    
+      <ul>
+        
+          <li class="anchor">
+            <a  title="Provision a Device" href="https://pwntus.github.io/mic-workshops/arduino-mkr-nb-1500/provision/">
+              
+              Provision a Device
+            </a>
+          </li>
+        
+          <li class="anchor">
+            <a  title="Setup Arduino IDE" href="https://pwntus.github.io/mic-workshops/arduino-mkr-nb-1500/arduino-ide/">
+              
+              Setup Arduino IDE
+            </a>
+          </li>
+        
+      </ul>
     
   </li>
 
@@ -312,46 +298,21 @@
 
   <article class="article">
     <div class="wrapper">
-      <h1>Logout </h1>
+      <h1>Arduino MKR NB 1500 </h1>
 
-      
+      <p>The <a href="https://store.arduino.cc/arduino-mkr-nb-1500">Arduino MKR NB 1500</a> comes fully compatible with Narrow Band IoT NB classes and LTE CAT M1 networks. In this workshop we&rsquo;ll go through how to provision a device in MIC and how to program the Arduino MKR NB 1500 to send data using the open <code>telenor.iot</code> APN over the Telenor NB-IoT network.</p>
 
-<p>We&rsquo;ve now added login functionality to our Login component and we&rsquo;ll continue to implement the <code>logout()</code> method.</p>
+<p>Before continuing, make sure that:</p>
 
-<p>To do this we need the <code>signOut()</code> action from the Cognito Vuex Module. We&rsquo;ll utilize the <a href="https://vuex.vuejs.org/api/#mapactions">mapActions</a> Vuex helper again to inject the required action into our Login-component:</p>
+<ul>
+<li>You have a valid MIC account: <a href="https://startiot.mic.telenorconnexion.com/signup">https://startiot.mic.telenorconnexion.com/signup</a></li>
+<li>You are able to login to the MIC App Board: <a href="https://startiot.mic.telenorconnexion.com/login">https://startiot.mic.telenorconnexion.com/login</a></li>
+</ul>
 
-<p>Open the Login component in <code>src/components/Login.vue</code>.</p>
-
-<pre><code class="language-javascript">methods: {
-  ...mapActions('Cognito', ['signInUser', 'signOut']), // Add 'signOut' from Cognito module into our component
-  async logout () {
-    // Implement me!
-  }
-}
-</code></pre>
-
-<p>Next, call the method in <code>logout()</code>:</p>
-
-<pre><code class="language-javascript">methods: {
-  ...mapActions('Cognito', ['signInUser', 'signOut']), // Add 'signOut' from Cognito module into our component
-  async logout () {
-    try {
-      // Call 'signOut' to sign out our user
-      await this.signOut()
-    } catch (e) {
-      console.error(e)
-    } finally {
-      this.loading = false
-    }
-  }
-}
-</code></pre>
-
-<h2 id="run-the-web-app-locally">Run the Web App Locally</h2>
-
-<p>In the previous page we started a local development server with hot reloading enabled. This means that while you keep the server up and running, updates will reflect on the server and there&rsquo;s no need to rebuild the project.</p>
-
-<p>If you&rsquo;ve implemented <code>logout()</code> correcly you should now be able to click the &ldquo;logout&rdquo; button on <a href="http://localhost:8080/">http://localhost:8080/</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">App Board</p>
+<p>The <strong>App Board</strong> is the web interface of Managed IoT Cloud. It is used to provision devices and create dashboards, but it is completely optional to use. Login here: <a href="https://startiot.mic.telenorconnexion.com/login">https://startiot.mic.telenorconnexion.com/login</a></p>
+</div>
 
 
       <aside class="copyright" role="note">
@@ -364,7 +325,7 @@
 <nav class="pagination" aria-label="Footer">
   <div class="previous">
   
-      <a href="https://pwntus.github.io/mic-workshops/workshop-4/create-a-login-form/" title="Create a Login Form">
+      <a href="https://pwntus.github.io/mic-workshops/workshop-5/" title="Workshop 5: Vue.js Cont.">
         <span class="direction">
           Previous
         </span>
@@ -374,7 +335,7 @@
           </div>
           <div class="stretch">
             <div class="title">
-              Create a Login Form
+              Workshop 5: Vue.js Cont.
             </div>
           </div>
         </div>
@@ -384,14 +345,14 @@
 
   <div class="next">
   
-      <a href="https://pwntus.github.io/mic-workshops/workshop-4/final-code/" title="Final Code">
+      <a href="https://pwntus.github.io/mic-workshops/arduino-mkr-nb-1500/provision/" title="Provision a Device">
         <span class="direction">
           Next
         </span>
         <div class="page">
           <div class="stretch">
             <div class="title">
-              Final Code
+              Provision a Device
             </div>
           </div>
           <div class="button button-next" role="button" aria-label="Next">

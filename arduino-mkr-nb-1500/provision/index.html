@@ -9,18 +9,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
-    <title>Logout - Managed IoT Cloud Workshops</title>
+    <title>Provision a Device - Managed IoT Cloud Workshops</title>
     <meta name="generator" content="Hugo 0.40.1" />
 
     
     <meta name="description" content="Easy to follow, step-by-step tutorials for the Telenor Managed IoT Cloud platform.">
     
-    <link rel="canonical" href="https://pwntus.github.io/mic-workshops/workshop-4/logout/">
+    <link rel="canonical" href="https://pwntus.github.io/mic-workshops/arduino-mkr-nb-1500/provision/">
     
     <meta name="author" content="Pontus Edvard Aurdal">
     
 
-    <meta property="og:url" content="https://pwntus.github.io/mic-workshops/workshop-4/logout/">
+    <meta property="og:url" content="https://pwntus.github.io/mic-workshops/arduino-mkr-nb-1500/provision/">
     <meta property="og:title" content="Managed IoT Cloud Workshops">
     <meta property="og:image" content="https://pwntus.github.io/mic-workshops/images/logo.png">
     <meta name="apple-mobile-web-app-title" content="Managed IoT Cloud Workshops">
@@ -96,7 +96,7 @@
     </div>
     <div class="stretch">
       <div class="title">
-        Logout
+        Provision a Device
       </div>
     </div>
 
@@ -205,43 +205,11 @@
 
   <li>
     
-    <a class="active" title="Workshop 4: Vue.js" href="https://pwntus.github.io/mic-workshops/workshop-4/">
+    <a  title="Workshop 4: Vue.js" href="https://pwntus.github.io/mic-workshops/workshop-4/">
       
       Workshop 4: Vue.js
     </a>
 
-    
-      <ul>
-        
-          <li class="anchor">
-            <a  title="Vuex" href="https://pwntus.github.io/mic-workshops/workshop-4/vuex/">
-              
-              Vuex
-            </a>
-          </li>
-        
-          <li class="anchor">
-            <a  title="Create a Login Form" href="https://pwntus.github.io/mic-workshops/workshop-4/create-a-login-form/">
-              
-              Create a Login Form
-            </a>
-          </li>
-        
-          <li class="anchor">
-            <a class="active" title="Logout" href="https://pwntus.github.io/mic-workshops/workshop-4/logout/">
-              
-              Logout
-            </a>
-          </li>
-        
-          <li class="anchor">
-            <a  title="Final Code" href="https://pwntus.github.io/mic-workshops/workshop-4/final-code/">
-              
-              Final Code
-            </a>
-          </li>
-        
-      </ul>
     
   </li>
 
@@ -267,11 +235,29 @@
 
   <li>
     
-    <a  title="Arduino MKR NB 1500" href="https://pwntus.github.io/mic-workshops/arduino-mkr-nb-1500/">
+    <a class="active" title="Arduino MKR NB 1500" href="https://pwntus.github.io/mic-workshops/arduino-mkr-nb-1500/">
       
       Arduino MKR NB 1500
     </a>
 
+    
+      <ul>
+        
+          <li class="anchor">
+            <a class="active" title="Provision a Device" href="https://pwntus.github.io/mic-workshops/arduino-mkr-nb-1500/provision/">
+              
+              Provision a Device
+            </a>
+          </li>
+        
+          <li class="anchor">
+            <a  title="Setup Arduino IDE" href="https://pwntus.github.io/mic-workshops/arduino-mkr-nb-1500/arduino-ide/">
+              
+              Setup Arduino IDE
+            </a>
+          </li>
+        
+      </ul>
     
   </li>
 
@@ -312,46 +298,51 @@
 
   <article class="article">
     <div class="wrapper">
-      <h1>Logout </h1>
+      <h1>Provision a Device </h1>
 
       
 
-<p>We&rsquo;ve now added login functionality to our Login component and we&rsquo;ll continue to implement the <code>logout()</code> method.</p>
+<p>We&rsquo;ll start by provision a device, called a <code>Thing</code> in MIC, which will represent our device in the physical world.</p>
 
-<p>To do this we need the <code>signOut()</code> action from the Cognito Vuex Module. We&rsquo;ll utilize the <a href="https://vuex.vuejs.org/api/#mapactions">mapActions</a> Vuex helper again to inject the required action into our Login-component:</p>
+<h2 id="create-a-new-thing-type">Create a new Thing Type</h2>
 
-<p>Open the Login component in <code>src/components/Login.vue</code>.</p>
+<p>To do so, login to the App Board and click on the <code>NEW THING TYPE</code> button in the top left corner:</p>
 
-<pre><code class="language-javascript">methods: {
-  ...mapActions('Cognito', ['signInUser', 'signOut']), // Add 'signOut' from Cognito module into our component
-  async logout () {
-    // Implement me!
-  }
-}
-</code></pre>
+<p><img src="https://pwntus.github.io/mic-workshops/images/arduino-mkr-nb-1500-00-new-thing-type.png" alt="Create a new Thing Type" title="Create a new Thing Type" /></p>
 
-<p>Next, call the method in <code>logout()</code>:</p>
+<p>Give your Thing Type a <strong>Label</strong>, <strong>Description</strong> and a <strong>Domain</strong> and click <strong>SAVE</strong>.</p>
 
-<pre><code class="language-javascript">methods: {
-  ...mapActions('Cognito', ['signInUser', 'signOut']), // Add 'signOut' from Cognito module into our component
-  async logout () {
-    try {
-      // Call 'signOut' to sign out our user
-      await this.signOut()
-    } catch (e) {
-      console.error(e)
-    } finally {
-      this.loading = false
-    }
-  }
-}
-</code></pre>
+<h2 id="create-a-new-thing">Create a new Thing</h2>
 
-<h2 id="run-the-web-app-locally">Run the Web App Locally</h2>
+<p>Click on your new Thing Type that has appeared in the list. You will now see the Thing Type dashboard.</p>
 
-<p>In the previous page we started a local development server with hot reloading enabled. This means that while you keep the server up and running, updates will reflect on the server and there&rsquo;s no need to rebuild the project.</p>
+<p>To create a new Thing, click on the <code>THINGS</code> button in the top right corner.</p>
 
-<p>If you&rsquo;ve implemented <code>logout()</code> correcly you should now be able to click the &ldquo;logout&rdquo; button on <a href="http://localhost:8080/">http://localhost:8080/</a>.</p>
+<p><img src="https://pwntus.github.io/mic-workshops/images/arduino-mkr-nb-1500-01-new-thing.png" alt="Create a new Thing" title="Create a new Thing" /></p>
+
+<p>Give the Thing a <strong>Name</strong> and a <strong>Domain</strong> and click <strong>CREATE</strong>.</p>
+
+<h2 id="view-thing-dashboard">View Thing Dashboard</h2>
+
+<p>The next step is to list all Things in our current Thing Type. Click on the <strong>LIST</strong> tab on the Thing Type dashboard.</p>
+
+<p><img src="https://pwntus.github.io/mic-workshops/images/arduino-mkr-nb-1500-02-list-things.png" alt="List Things" title="List Things" /></p>
+
+<p>Here you&rsquo;ll see a list of all Things belonging to our current Thing Type.</p>
+
+<p>If you click on the Thing name you&rsquo;ll see the dashboard for that Thing:</p>
+
+<p><img src="https://pwntus.github.io/mic-workshops/images/arduino-mkr-nb-1500-03-thing-list.png" alt="Thing List" title="Thing List" /></p>
+
+<h2 id="download-thing-certificate">Download Thing Certificate</h2>
+
+<p>In the Thing list, select your newly created Thing and open the options menu in the top right corner. Click the <code>Download certificate</code> option.</p>
+
+<p><img src="https://pwntus.github.io/mic-workshops/images/arduino-mkr-nb-1500-04-download-certificate.png" alt="Download Certificates" title="Download Certificates" /></p>
+
+<p>A ZIP-file containing public/private <a href="https://docs.aws.amazon.com/iot/latest/developerguide/managing-device-certs.html">X.509 certificates</a> for that Thing will be downloaded, which we&rsquo;ll use in our Arduino MKR NB 1500 code to authenticate requests.</p>
+
+<p>The ZIP-file has the name <code>xxxxxxxx-cert.zip</code> where <code>xxxxxxxx</code> is your <code>Thing ID</code>. Make a note of that for later.</p>
 
 
       <aside class="copyright" role="note">
@@ -364,7 +355,7 @@
 <nav class="pagination" aria-label="Footer">
   <div class="previous">
   
-      <a href="https://pwntus.github.io/mic-workshops/workshop-4/create-a-login-form/" title="Create a Login Form">
+      <a href="https://pwntus.github.io/mic-workshops/arduino-mkr-nb-1500/" title="Arduino MKR NB 1500">
         <span class="direction">
           Previous
         </span>
@@ -374,7 +365,7 @@
           </div>
           <div class="stretch">
             <div class="title">
-              Create a Login Form
+              Arduino MKR NB 1500
             </div>
           </div>
         </div>
@@ -384,14 +375,14 @@
 
   <div class="next">
   
-      <a href="https://pwntus.github.io/mic-workshops/workshop-4/final-code/" title="Final Code">
+      <a href="https://pwntus.github.io/mic-workshops/arduino-mkr-nb-1500/arduino-ide/" title="Setup Arduino IDE">
         <span class="direction">
           Next
         </span>
         <div class="page">
           <div class="stretch">
             <div class="title">
-              Final Code
+              Setup Arduino IDE
             </div>
           </div>
           <div class="button button-next" role="button" aria-label="Next">

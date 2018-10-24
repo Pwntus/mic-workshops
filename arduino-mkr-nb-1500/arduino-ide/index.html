@@ -9,18 +9,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
-    <title>Logout - Managed IoT Cloud Workshops</title>
+    <title>Setup Arduino IDE - Managed IoT Cloud Workshops</title>
     <meta name="generator" content="Hugo 0.40.1" />
 
     
     <meta name="description" content="Easy to follow, step-by-step tutorials for the Telenor Managed IoT Cloud platform.">
     
-    <link rel="canonical" href="https://pwntus.github.io/mic-workshops/workshop-4/logout/">
+    <link rel="canonical" href="https://pwntus.github.io/mic-workshops/arduino-mkr-nb-1500/arduino-ide/">
     
     <meta name="author" content="Pontus Edvard Aurdal">
     
 
-    <meta property="og:url" content="https://pwntus.github.io/mic-workshops/workshop-4/logout/">
+    <meta property="og:url" content="https://pwntus.github.io/mic-workshops/arduino-mkr-nb-1500/arduino-ide/">
     <meta property="og:title" content="Managed IoT Cloud Workshops">
     <meta property="og:image" content="https://pwntus.github.io/mic-workshops/images/logo.png">
     <meta name="apple-mobile-web-app-title" content="Managed IoT Cloud Workshops">
@@ -96,7 +96,7 @@
     </div>
     <div class="stretch">
       <div class="title">
-        Logout
+        Setup Arduino IDE
       </div>
     </div>
 
@@ -205,43 +205,11 @@
 
   <li>
     
-    <a class="active" title="Workshop 4: Vue.js" href="https://pwntus.github.io/mic-workshops/workshop-4/">
+    <a  title="Workshop 4: Vue.js" href="https://pwntus.github.io/mic-workshops/workshop-4/">
       
       Workshop 4: Vue.js
     </a>
 
-    
-      <ul>
-        
-          <li class="anchor">
-            <a  title="Vuex" href="https://pwntus.github.io/mic-workshops/workshop-4/vuex/">
-              
-              Vuex
-            </a>
-          </li>
-        
-          <li class="anchor">
-            <a  title="Create a Login Form" href="https://pwntus.github.io/mic-workshops/workshop-4/create-a-login-form/">
-              
-              Create a Login Form
-            </a>
-          </li>
-        
-          <li class="anchor">
-            <a class="active" title="Logout" href="https://pwntus.github.io/mic-workshops/workshop-4/logout/">
-              
-              Logout
-            </a>
-          </li>
-        
-          <li class="anchor">
-            <a  title="Final Code" href="https://pwntus.github.io/mic-workshops/workshop-4/final-code/">
-              
-              Final Code
-            </a>
-          </li>
-        
-      </ul>
     
   </li>
 
@@ -267,11 +235,29 @@
 
   <li>
     
-    <a  title="Arduino MKR NB 1500" href="https://pwntus.github.io/mic-workshops/arduino-mkr-nb-1500/">
+    <a class="active" title="Arduino MKR NB 1500" href="https://pwntus.github.io/mic-workshops/arduino-mkr-nb-1500/">
       
       Arduino MKR NB 1500
     </a>
 
+    
+      <ul>
+        
+          <li class="anchor">
+            <a  title="Provision a Device" href="https://pwntus.github.io/mic-workshops/arduino-mkr-nb-1500/provision/">
+              
+              Provision a Device
+            </a>
+          </li>
+        
+          <li class="anchor">
+            <a class="active" title="Setup Arduino IDE" href="https://pwntus.github.io/mic-workshops/arduino-mkr-nb-1500/arduino-ide/">
+              
+              Setup Arduino IDE
+            </a>
+          </li>
+        
+      </ul>
     
   </li>
 
@@ -312,46 +298,62 @@
 
   <article class="article">
     <div class="wrapper">
-      <h1>Logout </h1>
+      <h1>Setup Arduino IDE </h1>
 
       
 
-<p>We&rsquo;ve now added login functionality to our Login component and we&rsquo;ll continue to implement the <code>logout()</code> method.</p>
+<p>Next we&rsquo;ll setup the Arduino IDE to work with the Arduino MKR NB 1500 board.</p>
 
-<p>To do this we need the <code>signOut()</code> action from the Cognito Vuex Module. We&rsquo;ll utilize the <a href="https://vuex.vuejs.org/api/#mapactions">mapActions</a> Vuex helper again to inject the required action into our Login-component:</p>
+<p>Download the latest <a href="https://www.arduino.cc/en/Main/Software">Arduino IDE</a> version for your platform and install.</p>
 
-<p>Open the Login component in <code>src/components/Login.vue</code>.</p>
+<h2 id="add-board-support">Add Board Support</h2>
 
-<pre><code class="language-javascript">methods: {
-  ...mapActions('Cognito', ['signInUser', 'signOut']), // Add 'signOut' from Cognito module into our component
-  async logout () {
-    // Implement me!
-  }
-}
-</code></pre>
+<ul>
+<li>Open Arduino IDE and go to <strong>Tools ⟶ Board ⟶ Boards Manager</strong>.</li>
+<li>Search for and install <code>Arduino SAMD (32-bits ARM Cortex-M0+) Boards</code>.</li>
+<li>Close the IDE.</li>
+</ul>
 
-<p>Next, call the method in <code>logout()</code>:</p>
+<p><img src="https://pwntus.github.io/mic-workshops/images/arduino-mkr-nb-1500-05-board-manager.png" alt="Add Board Support" title="Add Board Support" /></p>
 
-<pre><code class="language-javascript">methods: {
-  ...mapActions('Cognito', ['signInUser', 'signOut']), // Add 'signOut' from Cognito module into our component
-  async logout () {
-    try {
-      // Call 'signOut' to sign out our user
-      await this.signOut()
-    } catch (e) {
-      console.error(e)
-    } finally {
-      this.loading = false
-    }
-  }
-}
-</code></pre>
+<h2 id="install-pre-release-core">Install Pre-Release Core</h2>
 
-<h2 id="run-the-web-app-locally">Run the Web App Locally</h2>
+<p>In order to install the pre-release core, you need to decompress the supplied <code>ArduinoCore-samd-newboards.zip</code> in the hardware section of your sketchbook folder.</p>
 
-<p>In the previous page we started a local development server with hot reloading enabled. This means that while you keep the server up and running, updates will reflect on the server and there&rsquo;s no need to rebuild the project.</p>
+<div class="admonition note">
+<p class="admonition-title">Sketchbook Folder Location</p>
+<p><ul>
+<li><strong>Windows:</strong> This PC\Documents\Arduino</li>
+<li><strong>Mac:</strong> $HOME/Documents/Arduino</li>
+<li><strong>GNU/Linux:</strong> $HOME/Arduino</li>
+</ul>
+</p>
+</div>
 
-<p>If you&rsquo;ve implemented <code>logout()</code> correcly you should now be able to click the &ldquo;logout&rdquo; button on <a href="http://localhost:8080/">http://localhost:8080/</a>.</p>
+<ul>
+<li>Create a new folder <code>hardware/arduino-new</code> in your sketchbook folder. If neither the <code>hardware</code> nor <code>arduino-new</code> folder exists, create them.</li>
+<li>Uncompress the contents of <code>ArduinoCore-samd-newboards.zip</code> in the previously created folder.</li>
+<li>Rename the uncompressed folder <code>samd</code>.</li>
+</ul>
+
+<p><img src="https://pwntus.github.io/mic-workshops/images/arduino-mkr-nb-1500-06-samd-folder.png" alt="SAMD Folder" title="SAMD Folder" /></p>
+
+<ul>
+<li>Open the Arduino IDE and go to <code>Boards Manager</code> to reload the index.</li>
+<li>Select board <code>Arduino MKR NB 1500</code> by going to <strong>Tools ⟶ Board ⟶ Arduino MKR NB 1500</strong></li>
+<li>Verify that you&rsquo;ve selected the correct board by looking in the bottom right corner of the IDE.</li>
+</ul>
+
+<p><img src="https://pwntus.github.io/mic-workshops/images/arduino-mkr-nb-1500-06-verify-board.png" alt="Verify Board" title="Verify Board" /></p>
+
+<h2 id="include-mkr-nb-iot-library">Include MKR NB IoT Library</h2>
+
+<ul>
+<li>Open Arduino IDE and go to <strong>Sketch ⟶ Include Library ⟶ Add .ZIP Library&hellip;</strong></li>
+<li>Search for and select the <code>MKRNBIoT-library.zip</code></li>
+</ul>
+
+<p>You now have everything you need to program the <code>Arduino MKR NB 1500</code> board!</p>
 
 
       <aside class="copyright" role="note">
@@ -364,7 +366,7 @@
 <nav class="pagination" aria-label="Footer">
   <div class="previous">
   
-      <a href="https://pwntus.github.io/mic-workshops/workshop-4/create-a-login-form/" title="Create a Login Form">
+      <a href="https://pwntus.github.io/mic-workshops/arduino-mkr-nb-1500/provision/" title="Provision a Device">
         <span class="direction">
           Previous
         </span>
@@ -374,7 +376,7 @@
           </div>
           <div class="stretch">
             <div class="title">
-              Create a Login Form
+              Provision a Device
             </div>
           </div>
         </div>
@@ -383,22 +385,6 @@
   </div>
 
   <div class="next">
-  
-      <a href="https://pwntus.github.io/mic-workshops/workshop-4/final-code/" title="Final Code">
-        <span class="direction">
-          Next
-        </span>
-        <div class="page">
-          <div class="stretch">
-            <div class="title">
-              Final Code
-            </div>
-          </div>
-          <div class="button button-next" role="button" aria-label="Next">
-            <i class="icon icon-forward"></i>
-          </div>
-        </div>
-      </a>
   
   </div>
 </nav>

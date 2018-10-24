@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Arduino-mkr-nb-1500s on Managed IoT Cloud Workshops</title>
+    <link>https://pwntus.github.io/mic-workshops/arduino-mkr-nb-1500/</link>
+    <description>Recent content in Arduino-mkr-nb-1500s on Managed IoT Cloud Workshops</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://pwntus.github.io/mic-workshops/arduino-mkr-nb-1500/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Arduino MKR NB 1500</title>
+      <link>https://pwntus.github.io/mic-workshops/arduino-mkr-nb-1500/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://pwntus.github.io/mic-workshops/arduino-mkr-nb-1500/</guid>
+      <description>The Arduino MKR NB 1500 comes fully compatible with Narrow Band IoT NB classes and LTE CAT M1 networks. In this workshop we&amp;rsquo;ll go through how to provision a device in MIC and how to program the Arduino MKR NB 1500 to send data using the open telenor.iot APN over the Telenor NB-IoT network.
+Before continuing, make sure that:
+ You have a valid MIC account: https://startiot.mic.telenorconnexion.com/signup You are able to login to the MIC App Board: https://startiot.</description>
+    </item>
+    
+    <item>
+      <title>Provision a Device</title>
+      <link>https://pwntus.github.io/mic-workshops/arduino-mkr-nb-1500/provision/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://pwntus.github.io/mic-workshops/arduino-mkr-nb-1500/provision/</guid>
+      <description>We&amp;rsquo;ll start by provision a device, called a Thing in MIC, which will represent our device in the physical world.
+Create a new Thing Type To do so, login to the App Board and click on the NEW THING TYPE button in the top left corner:
+Give your Thing Type a Label, Description and a Domain and click SAVE.
+Create a new Thing Click on your new Thing Type that has appeared in the list.</description>
+    </item>
+    
+    <item>
+      <title>Setup Arduino IDE</title>
+      <link>https://pwntus.github.io/mic-workshops/arduino-mkr-nb-1500/arduino-ide/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://pwntus.github.io/mic-workshops/arduino-mkr-nb-1500/arduino-ide/</guid>
+      <description>Next we&amp;rsquo;ll setup the Arduino IDE to work with the Arduino MKR NB 1500 board.
+Download the latest Arduino IDE version for your platform and install.
+Add Board Support  Open Arduino IDE and go to Tools ⟶ Board ⟶ Boards Manager. Search for and install Arduino SAMD (32-bits ARM Cortex-M0+) Boards. Close the IDE.  Install Pre-Release Core In order to install the pre-release core, you need to decompress the supplied ArduinoCore-samd-newboards.</description>
+    </item>
+    
+  </channel>
+</rss>

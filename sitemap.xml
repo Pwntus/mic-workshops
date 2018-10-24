@@ -115,6 +115,23 @@
   </url>
   
   <url>
+    <loc>https://pwntus.github.io/mic-workshops/arduino-mkr-nb-1500/</loc>
+  </url>
+  
+  <url>
+    <loc>https://pwntus.github.io/mic-workshops/arduino-mkr-nb-1500/provision/</loc>
+  </url>
+  
+  <url>
+    <loc>https://pwntus.github.io/mic-workshops/arduino-mkr-nb-1500/arduino-ide/</loc>
+  </url>
+  
+  <url>
+    <loc>https://pwntus.github.io/mic-workshops/arduino-mkr-nb-1500/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://pwntus.github.io/mic-workshops/categories/</loc>
     <priority>0</priority>
   </url>
