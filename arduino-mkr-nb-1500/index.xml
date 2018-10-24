@@ -44,5 +44,46 @@ Download the latest Arduino IDE version for your platform and install.
 Add Board Support  Open Arduino IDE and go to Tools ⟶ Board ⟶ Boards Manager. Search for and install Arduino SAMD (32-bits ARM Cortex-M0+) Boards. Close the IDE.  Install Pre-Release Core In order to install the pre-release core, you need to decompress the supplied ArduinoCore-samd-newboards.</description>
     </item>
     
+    <item>
+      <title>Programming 1: Initialize</title>
+      <link>https://pwntus.github.io/mic-workshops/arduino-mkr-nb-1500/programming-1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://pwntus.github.io/mic-workshops/arduino-mkr-nb-1500/programming-1/</guid>
+      <description>With your Arduino IDE setup for the Arduino MKR NB 1500, create a new sketch.
+Initializing Code I your new sketch, enter the following code:
+#include &amp;lt;MKRNB.h&amp;gt; #include &amp;lt;Modem.h&amp;gt; #include &amp;lt;stdio.h&amp;gt; // Please enter your sensitive data in the Secret tab or arduino_secrets.h // PIN Number const char PINNUMBER[] = &amp;quot;&amp;quot;; // Local port to listen for downlink UDP packets unsigned int MICUdpPort = 8081; // IP address to the UDP-to-MIC bridge IPAddress MICUdpIP(54, 194, 211, 79); // Initialize the library instance NBClient client; GPRS gprs; NB nbAccess; NBModem modemTest; // Packet buffer for downlink packets byte packetBuffer[512]; // A UDP instance to let us send and receive packets over UDP NBUDP Udp;  Setup Continue by adding the following code inside the setup() section:</description>
+    </item>
+    
+    <item>
+      <title>Programming 2: Loop</title>
+      <link>https://pwntus.github.io/mic-workshops/arduino-mkr-nb-1500/programming-2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://pwntus.github.io/mic-workshops/arduino-mkr-nb-1500/programming-2/</guid>
+      <description>Continue by adding the following code inside the loop() section:
+void loop() { int size = 0; Serial.print(&amp;quot;Send packet to MIC: &amp;quot;); sendMICUDPpacket(MICUdpIP); Serial.println(&amp;quot;Check if we have received something...&amp;quot;); size = receiveMICUDPpacket(); if (size &amp;gt; 0) { Serial.println(&amp;quot;Received packet with size: &amp;quot; + size); String bufferString = String((char *) packetBuffer); Serial.println(&amp;quot;Packet data is: &amp;lt;&amp;quot; + bufferString + &amp;quot;&amp;gt;&amp;quot;); } else { Serial.println(&amp;quot;No data received...&amp;quot;); } // Wait 30 seconds before sending again Serial.</description>
+    </item>
+    
+    <item>
+      <title>Programming 3: Receive Packet</title>
+      <link>https://pwntus.github.io/mic-workshops/arduino-mkr-nb-1500/programming-3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://pwntus.github.io/mic-workshops/arduino-mkr-nb-1500/programming-3/</guid>
+      <description>Implement the receiveMICUDPpacket() function:
+int receiveMICUDPpacket() { int size = Udp.parsePacket(); // Check if size is larger than 0, if yes we have received something if (size &amp;gt; 0) { // Read the packet into the buffer Udp.read(packetBuffer, size); } return(size); }  </description>
+    </item>
+    
+    <item>
+      <title>Programming 4: Send Packet</title>
+      <link>https://pwntus.github.io/mic-workshops/arduino-mkr-nb-1500/programming-4/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://pwntus.github.io/mic-workshops/arduino-mkr-nb-1500/programming-4/</guid>
+      <description>Implement the sendMICUDPpacket() function:
+unsigned long sendMICUDPpacket(IPAddress&amp;amp; address) { String p1, p2, p3, payload = &amp;quot;&amp;quot;; float r = 0.0; float hum = 0.0; p1 = &amp;quot;{\&amp;quot;thingName\&amp;quot;:\&amp;quot;00001597\&amp;quot;,\&amp;quot;hum\&amp;quot;:\&amp;quot;&amp;quot;; hum = 24; r = random(0, 9); r = r / 10; hum = hum + r; p2 = hum; p3 = &amp;quot;\&amp;quot;,\&amp;quot;auth\&amp;quot;:\&amp;quot;0XXXF9E57110E91XXXXX67076EXXXX64\&amp;quot;}&amp;quot;; payload = p1 + p2 + p3; Serial.println(&amp;quot;&amp;lt;&amp;quot; + payload + &amp;quot;&amp;gt;&amp;quot;); // Write UDP packet Udp.beginPacket(address, MICUdpPort); Udp.write(payload.c_str(), payload.length()); Udp.</description>
+    </item>
+    
   </channel>
 </rss>

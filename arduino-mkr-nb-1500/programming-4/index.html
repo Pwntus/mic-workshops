@@ -9,18 +9,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
-    <title>Arduino MKR NB 1500 - Managed IoT Cloud Workshops</title>
+    <title>Programming 4: Send Packet - Managed IoT Cloud Workshops</title>
     <meta name="generator" content="Hugo 0.40.1" />
 
     
     <meta name="description" content="Easy to follow, step-by-step tutorials for the Telenor Managed IoT Cloud platform.">
     
-    <link rel="canonical" href="https://pwntus.github.io/mic-workshops/arduino-mkr-nb-1500/">
+    <link rel="canonical" href="https://pwntus.github.io/mic-workshops/arduino-mkr-nb-1500/programming-4/">
     
     <meta name="author" content="Pontus Edvard Aurdal">
     
 
-    <meta property="og:url" content="https://pwntus.github.io/mic-workshops/arduino-mkr-nb-1500/">
+    <meta property="og:url" content="https://pwntus.github.io/mic-workshops/arduino-mkr-nb-1500/programming-4/">
     <meta property="og:title" content="Managed IoT Cloud Workshops">
     <meta property="og:image" content="https://pwntus.github.io/mic-workshops/images/logo.png">
     <meta name="apple-mobile-web-app-title" content="Managed IoT Cloud Workshops">
@@ -96,7 +96,7 @@
     </div>
     <div class="stretch">
       <div class="title">
-        Arduino MKR NB 1500
+        Programming 4: Send Packet
       </div>
     </div>
 
@@ -279,7 +279,7 @@
           </li>
         
           <li class="anchor">
-            <a  title="Programming 4: Send Packet" href="https://pwntus.github.io/mic-workshops/arduino-mkr-nb-1500/programming-4/">
+            <a class="active" title="Programming 4: Send Packet" href="https://pwntus.github.io/mic-workshops/arduino-mkr-nb-1500/programming-4/">
               
               Programming 4: Send Packet
             </a>
@@ -326,21 +326,32 @@
 
   <article class="article">
     <div class="wrapper">
-      <h1>Arduino MKR NB 1500 </h1>
+      <h1>Programming 4: Send Packet </h1>
 
-      <p>The <a href="https://store.arduino.cc/arduino-mkr-nb-1500">Arduino MKR NB 1500</a> comes fully compatible with Narrow Band IoT NB classes and LTE CAT M1 networks. In this workshop we&rsquo;ll go through how to provision a device in MIC and how to program the Arduino MKR NB 1500 to send data using the open <code>telenor.iot</code> APN over the Telenor NB-IoT network.</p>
+      <p>Implement the <code>sendMICUDPpacket()</code> function:</p>
 
-<p>Before continuing, make sure that:</p>
+<pre><code class="language-cpp">unsigned long sendMICUDPpacket(IPAddress&amp; address) {
+  String p1, p2, p3, payload = &quot;&quot;;
+  float r = 0.0;
+  float hum = 0.0;
 
-<ul>
-<li>You have a valid MIC account: <a href="https://startiot.mic.telenorconnexion.com/signup">https://startiot.mic.telenorconnexion.com/signup</a></li>
-<li>You are able to login to the MIC App Board: <a href="https://startiot.mic.telenorconnexion.com/login">https://startiot.mic.telenorconnexion.com/login</a></li>
-</ul>
+  p1 = &quot;{\&quot;thingName\&quot;:\&quot;00001597\&quot;,\&quot;hum\&quot;:\&quot;&quot;;
+  hum = 24;
+  r = random(0, 9);
+  r = r / 10;
+  hum = hum + r;
+  p2 = hum;
+  p3 = &quot;\&quot;,\&quot;auth\&quot;:\&quot;0XXXF9E57110E91XXXXX67076EXXXX64\&quot;}&quot;;
 
-<div class="admonition note">
-<p class="admonition-title">App Board</p>
-<p>The <strong>App Board</strong> is the web interface of Managed IoT Cloud. It is used to provision devices and create dashboards, but it is completely optional to use. Login here: <a href="https://startiot.mic.telenorconnexion.com/login">https://startiot.mic.telenorconnexion.com/login</a></p>
-</div>
+  payload = p1 + p2 + p3;
+  Serial.println(&quot;&lt;&quot; + payload + &quot;&gt;&quot;);
+
+  // Write UDP packet
+  Udp.beginPacket(address, MICUdpPort);
+  Udp.write(payload.c_str(), payload.length());
+  Udp.endPacket();
+}
+</code></pre>
 
 
       <aside class="copyright" role="note">
@@ -353,7 +364,7 @@
 <nav class="pagination" aria-label="Footer">
   <div class="previous">
   
-      <a href="https://pwntus.github.io/mic-workshops/workshop-5/" title="Workshop 5: Vue.js Cont.">
+      <a href="https://pwntus.github.io/mic-workshops/arduino-mkr-nb-1500/programming-3/" title="Programming 3: Receive Packet">
         <span class="direction">
           Previous
         </span>
@@ -363,7 +374,7 @@
           </div>
           <div class="stretch">
             <div class="title">
-              Workshop 5: Vue.js Cont.
+              Programming 3: Receive Packet
             </div>
           </div>
         </div>
@@ -372,22 +383,6 @@
   </div>
 
   <div class="next">
-  
-      <a href="https://pwntus.github.io/mic-workshops/arduino-mkr-nb-1500/provision/" title="Provision a Device">
-        <span class="direction">
-          Next
-        </span>
-        <div class="page">
-          <div class="stretch">
-            <div class="title">
-              Provision a Device
-            </div>
-          </div>
-          <div class="button button-next" role="button" aria-label="Next">
-            <i class="icon icon-forward"></i>
-          </div>
-        </div>
-      </a>
   
   </div>
 </nav>

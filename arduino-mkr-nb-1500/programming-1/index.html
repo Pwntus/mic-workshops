@@ -9,18 +9,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
-    <title>Arduino MKR NB 1500 - Managed IoT Cloud Workshops</title>
+    <title>Programming 1: Initialize - Managed IoT Cloud Workshops</title>
     <meta name="generator" content="Hugo 0.40.1" />
 
     
     <meta name="description" content="Easy to follow, step-by-step tutorials for the Telenor Managed IoT Cloud platform.">
     
-    <link rel="canonical" href="https://pwntus.github.io/mic-workshops/arduino-mkr-nb-1500/">
+    <link rel="canonical" href="https://pwntus.github.io/mic-workshops/arduino-mkr-nb-1500/programming-1/">
     
     <meta name="author" content="Pontus Edvard Aurdal">
     
 
-    <meta property="og:url" content="https://pwntus.github.io/mic-workshops/arduino-mkr-nb-1500/">
+    <meta property="og:url" content="https://pwntus.github.io/mic-workshops/arduino-mkr-nb-1500/programming-1/">
     <meta property="og:title" content="Managed IoT Cloud Workshops">
     <meta property="og:image" content="https://pwntus.github.io/mic-workshops/images/logo.png">
     <meta name="apple-mobile-web-app-title" content="Managed IoT Cloud Workshops">
@@ -96,7 +96,7 @@
     </div>
     <div class="stretch">
       <div class="title">
-        Arduino MKR NB 1500
+        Programming 1: Initialize
       </div>
     </div>
 
@@ -258,7 +258,7 @@
           </li>
         
           <li class="anchor">
-            <a  title="Programming 1: Initialize" href="https://pwntus.github.io/mic-workshops/arduino-mkr-nb-1500/programming-1/">
+            <a class="active" title="Programming 1: Initialize" href="https://pwntus.github.io/mic-workshops/arduino-mkr-nb-1500/programming-1/">
               
               Programming 1: Initialize
             </a>
@@ -326,21 +326,104 @@
 
   <article class="article">
     <div class="wrapper">
-      <h1>Arduino MKR NB 1500 </h1>
+      <h1>Programming 1: Initialize </h1>
 
-      <p>The <a href="https://store.arduino.cc/arduino-mkr-nb-1500">Arduino MKR NB 1500</a> comes fully compatible with Narrow Band IoT NB classes and LTE CAT M1 networks. In this workshop we&rsquo;ll go through how to provision a device in MIC and how to program the Arduino MKR NB 1500 to send data using the open <code>telenor.iot</code> APN over the Telenor NB-IoT network.</p>
+      
 
-<p>Before continuing, make sure that:</p>
+<p>With your Arduino IDE setup for the <code>Arduino MKR NB 1500</code>, create a new sketch.</p>
 
-<ul>
-<li>You have a valid MIC account: <a href="https://startiot.mic.telenorconnexion.com/signup">https://startiot.mic.telenorconnexion.com/signup</a></li>
-<li>You are able to login to the MIC App Board: <a href="https://startiot.mic.telenorconnexion.com/login">https://startiot.mic.telenorconnexion.com/login</a></li>
-</ul>
+<h2 id="initializing-code">Initializing Code</h2>
 
-<div class="admonition note">
-<p class="admonition-title">App Board</p>
-<p>The <strong>App Board</strong> is the web interface of Managed IoT Cloud. It is used to provision devices and create dashboards, but it is completely optional to use. Login here: <a href="https://startiot.mic.telenorconnexion.com/login">https://startiot.mic.telenorconnexion.com/login</a></p>
-</div>
+<p>I your new sketch, enter the following code:</p>
+
+<pre><code class="language-cpp">#include &lt;MKRNB.h&gt;
+#include &lt;Modem.h&gt;
+#include &lt;stdio.h&gt;
+
+// Please enter your sensitive data in the Secret tab or arduino_secrets.h
+// PIN Number
+const char PINNUMBER[]     = &quot;&quot;;
+// Local port to listen for downlink UDP packets
+unsigned int MICUdpPort = 8081;
+// IP address to the UDP-to-MIC bridge
+IPAddress MICUdpIP(54, 194, 211, 79);
+
+// Initialize the library instance
+NBClient client;
+GPRS gprs;
+NB nbAccess;
+NBModem modemTest;
+
+// Packet buffer for downlink packets
+byte packetBuffer[512];
+
+// A UDP instance to let us send and receive packets over UDP
+NBUDP Udp;
+</code></pre>
+
+<h2 id="setup">Setup</h2>
+
+<p>Continue by adding the following code inside the <code>setup()</code> section:</p>
+
+<pre><code class="language-cpp">void setup() {
+  // Allocate response variable used with AT commands
+  String response = &quot;&quot;;
+  response.reserve(100);
+
+  // Init message
+  Serial.println(&quot;Starting Arduino MKR NB 1500.&quot;);
+
+  // Open serial communication
+  Serial.begin(9600);
+  // Wait 2s for port to open
+  delay(2000);
+
+  Serial.println(&quot;Serial port open.&quot;);
+
+  // Check if modem is ready
+  NB_NetworkStatus_t modemStatus = nbAccess.begin(PINNUMBER);
+  while (modemStatus != NB_READY) {
+    Serial.println(&quot;Modem not ready, retry in 2s...&quot;);
+    delay(2000);
+  }
+
+  // Set radio technology to NB-IoT
+  Serial.println(&quot;Set radio technology to NB-IoT (7 is for Cat M1 and 8 is for NB-IoT): &quot;);
+  MODEM.send(&quot;AT+URAT=8&quot;);
+  MODEM.waitForResponse(100, &amp;response);
+  Serial.println(response);
+
+  // Set APN to default APN
+  Serial.println(&quot;Set APN to telenor.iot: &quot;);
+  MODEM.send(&quot;AT+CGDCONT=1,\&quot;IP\&quot;,\&quot;telenor.iot\&quot;&quot;);
+  MODEM.waitForResponse(100, &amp;response);
+  Serial.println(response);
+
+  // Set operator to Telenor
+  Serial.println(&quot;Set operator to Telenor: &quot;);
+  MODEM.send(&quot;AT+COPS=1,2,\&quot;24201\&quot;&quot;);
+  MODEM.waitForResponse(100, &amp;response);
+  Serial.println(response);
+
+  Serial.println(&quot;Try to connect...&quot;);
+  boolean connected = false;
+  while (!connected) {
+    if (gprs.attachGPRS() == GPRS_READY) {
+      Serial.println(&quot;Connected!&quot;);
+      connected = true;
+    } else {
+      Serial.println(&quot;Not connected, retrying...&quot;);
+      delay(1000);
+    }
+  }
+
+  Serial.println(&quot;\nSetup socket for connection to MIC UDP bridge...&quot;);
+  Udp.begin(MICUdpPort);
+
+  // Seed random number generator with noise from pin 0
+  randomSeed(analogRead(0));
+}
+</code></pre>
 
 
       <aside class="copyright" role="note">
@@ -353,7 +436,7 @@
 <nav class="pagination" aria-label="Footer">
   <div class="previous">
   
-      <a href="https://pwntus.github.io/mic-workshops/workshop-5/" title="Workshop 5: Vue.js Cont.">
+      <a href="https://pwntus.github.io/mic-workshops/arduino-mkr-nb-1500/arduino-ide/" title="Setup Arduino IDE">
         <span class="direction">
           Previous
         </span>
@@ -363,7 +446,7 @@
           </div>
           <div class="stretch">
             <div class="title">
-              Workshop 5: Vue.js Cont.
+              Setup Arduino IDE
             </div>
           </div>
         </div>
@@ -373,14 +456,14 @@
 
   <div class="next">
   
-      <a href="https://pwntus.github.io/mic-workshops/arduino-mkr-nb-1500/provision/" title="Provision a Device">
+      <a href="https://pwntus.github.io/mic-workshops/arduino-mkr-nb-1500/programming-2/" title="Programming 2: Loop">
         <span class="direction">
           Next
         </span>
         <div class="page">
           <div class="stretch">
             <div class="title">
-              Provision a Device
+              Programming 2: Loop
             </div>
           </div>
           <div class="button button-next" role="button" aria-label="Next">
