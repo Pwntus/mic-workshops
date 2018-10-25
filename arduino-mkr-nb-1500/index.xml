@@ -51,7 +51,7 @@ Add Board Support  Open Arduino IDE and go to Tools ⟶ Board ⟶ Boards Manager
       
       <guid>https://pwntus.github.io/mic-workshops/arduino-mkr-nb-1500/programming-1/</guid>
       <description>With your Arduino IDE setup for the Arduino MKR NB 1500, create a new sketch.
-Initializing Code I your new sketch, enter the following code:
+Initializing Code In your new sketch, enter the following code:
 #include &amp;lt;MKRNB.h&amp;gt; #include &amp;lt;Modem.h&amp;gt; #include &amp;lt;stdio.h&amp;gt; // Please enter your sensitive data in the Secret tab or arduino_secrets.h // PIN Number const char PINNUMBER[] = &amp;quot;&amp;quot;; // Local port to listen for downlink UDP packets unsigned int MICUdpPort = 8081; // IP address to the UDP-to-MIC bridge IPAddress MICUdpIP(54, 194, 211, 79); // Initialize the library instance NBClient client; GPRS gprs; NB nbAccess; NBModem modemTest; // Packet buffer for downlink packets byte packetBuffer[512]; // A UDP instance to let us send and receive packets over UDP NBUDP Udp;  Setup Continue by adding the following code inside the setup() section:</description>
     </item>
     
@@ -82,7 +82,7 @@ int receiveMICUDPpacket() { int size = Udp.parsePacket(); // Check if size is la
       
       <guid>https://pwntus.github.io/mic-workshops/arduino-mkr-nb-1500/programming-4/</guid>
       <description>Implement the sendMICUDPpacket() function:
-unsigned long sendMICUDPpacket(IPAddress&amp;amp; address) { String p1, p2, p3, payload = &amp;quot;&amp;quot;; float r = 0.0; float hum = 0.0; p1 = &amp;quot;{\&amp;quot;thingName\&amp;quot;:\&amp;quot;00001597\&amp;quot;,\&amp;quot;hum\&amp;quot;:\&amp;quot;&amp;quot;; hum = 24; r = random(0, 9); r = r / 10; hum = hum + r; p2 = hum; p3 = &amp;quot;\&amp;quot;,\&amp;quot;auth\&amp;quot;:\&amp;quot;0XXXF9E57110E91XXXXX67076EXXXX64\&amp;quot;}&amp;quot;; payload = p1 + p2 + p3; Serial.println(&amp;quot;&amp;lt;&amp;quot; + payload + &amp;quot;&amp;gt;&amp;quot;); // Write UDP packet Udp.beginPacket(address, MICUdpPort); Udp.write(payload.c_str(), payload.length()); Udp.</description>
+unsigned long sendMICUDPpacket(IPAddress&amp;amp; address) { String p1, p2, p3, payload = &amp;quot;&amp;quot;; float r = 0.0; float hum = 0.0; p1 = &amp;quot;{\&amp;quot;thingName\&amp;quot;:\&amp;quot;00001597\&amp;quot;,\&amp;quot;humidity\&amp;quot;:\&amp;quot;&amp;quot;; hum = 24; r = random(0, 9); r = r / 10; hum = hum + r; p2 = hum; p3 = &amp;quot;\&amp;quot;,\&amp;quot;auth\&amp;quot;:\&amp;quot;0XXXF9E57110E91XXXXX67076EXXXX64\&amp;quot;}&amp;quot;; payload = p1 + p2 + p3; Serial.println(&amp;quot;&amp;lt;&amp;quot; + payload + &amp;quot;&amp;gt;&amp;quot;); // Write UDP packet Udp.beginPacket(address, MICUdpPort); Udp.write(payload.c_str(), payload.</description>
     </item>
     
   </channel>

@@ -328,14 +328,16 @@
     <div class="wrapper">
       <h1>Programming 4: Send Packet </h1>
 
-      <p>Implement the <code>sendMICUDPpacket()</code> function:</p>
+      
+
+<p>Implement the <code>sendMICUDPpacket()</code> function:</p>
 
 <pre><code class="language-cpp">unsigned long sendMICUDPpacket(IPAddress&amp; address) {
   String p1, p2, p3, payload = &quot;&quot;;
   float r = 0.0;
   float hum = 0.0;
 
-  p1 = &quot;{\&quot;thingName\&quot;:\&quot;00001597\&quot;,\&quot;hum\&quot;:\&quot;&quot;;
+  p1 = &quot;{\&quot;thingName\&quot;:\&quot;00001597\&quot;,\&quot;humidity\&quot;:\&quot;&quot;;
   hum = 24;
   r = random(0, 9);
   r = r / 10;
@@ -352,6 +354,31 @@
   Udp.endPacket();
 }
 </code></pre>
+
+<h2 id="payload-conventions">Payload Conventions</h2>
+
+<p>The payload we&rsquo;re sending must be a JSON-object. There are two required properties; <code>thingName</code> and <code>auth</code>.</p>
+
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>thingName</td>
+<td><code>MIC Thing ID</code></td>
+</tr>
+
+<tr>
+<td>auth</td>
+<td><code>An MD5 hash of the public key of the Thing</code></td>
+</tr>
+</tbody>
+</table>
 
 
       <aside class="copyright" role="note">
