@@ -16,7 +16,7 @@ unsigned long sendMICUDPpacket(IPAddress& address) {
   float r = 0.0;
   float hum = 0.0;
 
-  p1 = "{\"thingName\":\"00001597\",\"hum\":\"";
+  p1 = "{\"thingName\":\"00001597\",\"humidity\":\"";
   hum = 24;
   r = random(0, 9);
   r = r / 10;
@@ -33,3 +33,12 @@ unsigned long sendMICUDPpacket(IPAddress& address) {
   Udp.endPacket();
 }
 ```
+
+## Payload Conventions
+
+The payload we're sending must be a JSON-object. There are two required properties; `thingName` and `auth`.
+
+Property | Description
+--- | ---
+thingName | `MIC Thing ID`
+auth  | `An MD5 hash of the public key of the Thing`

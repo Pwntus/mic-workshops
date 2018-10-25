@@ -12,7 +12,7 @@ With your Arduino IDE setup for the `Arduino MKR NB 1500`, create a new sketch.
 
 ## Initializing Code
 
-I your new sketch, enter the following code:
+In your new sketch, enter the following code:
 
 ```cpp
 #include <MKRNB.h>
