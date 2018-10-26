@@ -61,8 +61,8 @@ void setup() {
   Serial.println("Serial port open.");
 
   // Check if modem is ready
-  NB_NetworkStatus_t modemStatus = nbAccess.begin(PINNUMBER);
-  while (modemStatus != NB_READY) {
+  NB_NetworkStatus_t modemStatus;
+  for (modemStatus = nbAccess.begin(PINNUMBER); modemStatus != NB_READY; modemStatus = nbAccess.begin(PINNUMBER)) {
     Serial.println("Modem not ready, retry in 2s...");
     delay(2000);
   }
