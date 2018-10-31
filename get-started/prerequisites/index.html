@@ -183,9 +183,9 @@
 
   <li>
     
-    <a  title="Manifest" href="https://pwntus.github.io/mic-workshops/manifest/">
+    <a  title="Workshop 1: Arduino IDE" href="https://pwntus.github.io/mic-workshops/workshop-1/">
       
-      Manifest
+      Workshop 1: Arduino IDE
     </a>
 
     
@@ -193,9 +193,9 @@
 
   <li>
     
-    <a  title="Workshop 1: Create an API Client" href="https://pwntus.github.io/mic-workshops/workshop-1/">
+    <a  title="Workshop 2: IMSI and IMEI" href="https://pwntus.github.io/mic-workshops/workshop-2/">
       
-      Workshop 1: Create an API Client
+      Workshop 2: IMSI and IMEI
     </a>
 
     
@@ -203,9 +203,9 @@
 
   <li>
     
-    <a  title="Workshop 2: Use the API" href="https://pwntus.github.io/mic-workshops/workshop-2/">
+    <a  title="Workshop 3: Provision a Device" href="https://pwntus.github.io/mic-workshops/workshop-3/">
       
-      Workshop 2: Use the API
+      Workshop 3: Provision a Device
     </a>
 
     
@@ -213,9 +213,9 @@
 
   <li>
     
-    <a  title="Workshop 3: MQTT Realtime" href="https://pwntus.github.io/mic-workshops/workshop-3/">
+    <a  title="Workshop 4: Program the Device" href="https://pwntus.github.io/mic-workshops/workshop-4/">
       
-      Workshop 3: MQTT Realtime
+      Workshop 4: Program the Device
     </a>
 
     
@@ -223,9 +223,9 @@
 
   <li>
     
-    <a  title="Workshop 4: Vue.js" href="https://pwntus.github.io/mic-workshops/workshop-4/">
+    <a  title="Workshop 5: Uplink Transform" href="https://pwntus.github.io/mic-workshops/workshop-5/">
       
-      Workshop 4: Vue.js
+      Workshop 5: Uplink Transform
     </a>
 
     
@@ -233,9 +233,9 @@
 
   <li>
     
-    <a  title="Workshop 5: Vue.js Cont." href="https://pwntus.github.io/mic-workshops/workshop-5/">
+    <a  title="Workshop 6: App Board" href="https://pwntus.github.io/mic-workshops/workshop-6/">
       
-      Workshop 5: Vue.js Cont.
+      Workshop 6: App Board
     </a>
 
     
@@ -247,15 +247,75 @@
 
         
         <hr>
-        <span class="section">IoT Devices</span>
+        <span class="section">API Workshops</span>
         <ul>
           
 
   <li>
     
-    <a  title="Arduino MKR NB 1500" href="https://pwntus.github.io/mic-workshops/arduino-mkr-nb-1500/">
+    <a  title="Get Started with the API" href="https://pwntus.github.io/mic-workshops/api-get-started/">
       
-      Arduino MKR NB 1500
+      Get Started with the API
+    </a>
+
+    
+  </li>
+
+  <li>
+    
+    <a  title="Manifest" href="https://pwntus.github.io/mic-workshops/manifest/">
+      
+      Manifest
+    </a>
+
+    
+  </li>
+
+  <li>
+    
+    <a  title="Workshop 1: Create an API Client" href="https://pwntus.github.io/mic-workshops/api-workshop-1/">
+      
+      Workshop 1: Create an API Client
+    </a>
+
+    
+  </li>
+
+  <li>
+    
+    <a  title="Workshop 2: Use the API" href="https://pwntus.github.io/mic-workshops/api-workshop-2/">
+      
+      Workshop 2: Use the API
+    </a>
+
+    
+  </li>
+
+  <li>
+    
+    <a  title="Workshop 3: MQTT Realtime" href="https://pwntus.github.io/mic-workshops/api-workshop-3/">
+      
+      Workshop 3: MQTT Realtime
+    </a>
+
+    
+  </li>
+
+  <li>
+    
+    <a  title="Workshop 4: Vue.js" href="https://pwntus.github.io/mic-workshops/api-workshop-4/">
+      
+      Workshop 4: Vue.js
+    </a>
+
+    
+  </li>
+
+  <li>
+    
+    <a  title="Workshop 5: Vue.js Cont." href="https://pwntus.github.io/mic-workshops/api-workshop-5/">
+      
+      Workshop 5: Vue.js Cont.
     </a>
 
     
@@ -300,58 +360,18 @@
     <div class="wrapper">
       <h1>Prerequisites </h1>
 
-      
+      <p>The <a href="https://store.arduino.cc/arduino-mkr-nb-1500">Arduino MKR NB 1500</a> comes fully compatible with Narrow Band IoT NB classes and LTE CAT M1 networks. In this workshop we&rsquo;ll go through how to provision a device in MIC and how to program the Arduino MKR NB 1500 to send data using the open <code>telenor.iot</code> APN over the Telenor NB-IoT network.</p>
 
-<p>The RESTful API makes it possible to use a wide variety of technologies to utilize the MIC platform. As long as you can make HTTP-calls you&rsquo;re good to go.</p>
+<p>Before continuing, make sure that:</p>
 
-<p>In the following workshops we&rsquo;ll use <a href="https://nodejs.org/">Node.js</a> with the <a href="https://vuejs.org/">Vue.js</a> JavaScript framework. It&rsquo;s fast to get started with and building a functioning application.</p>
-
-<h2 id="installing-node-js">Installing Node.js</h2>
-
-<p>The easies way of getting Node.js is to install the <a href="https://github.com/creationix/nvm">Node Version Manager (NVM)</a>. Head over to their GitHub page for instructions on how to install it for your preferred platform.</p>
-
-<p>If running a Linux distribution it should be enough running the following command:</p>
-
-<pre><code class="language-sh">curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
-</code></pre>
-
-<p>Verify your installation:</p>
-
-<pre><code class="language-sh">nvm --version
-</code></pre>
-
-<p>Download, compile and install the latest release of Node.js:</p>
-
-<pre><code class="language-sh">nvm install node
-</code></pre>
-
-<p>Verify your Node.js installation:</p>
-
-<pre><code class="language-sh">node --version
-</code></pre>
-
-<p>Verify your <a href="https://www.npmjs.com/">Node Package Manager (NPM)</a> installation:</p>
-
-<pre><code class="language-sh">npm --version
-</code></pre>
-
-<h2 id="installing-vue-js">Installing Vue.js</h2>
-
-<p>Vue.js is a lightweight JavaScript framework similar to what React and Angular are. We&rsquo;ll use it to scaffold and create web applications in no time.</p>
-
-<p>Install the <a href="https://cli.vuejs.org/guide/installation.html">Vue CLI</a>:</p>
-
-<pre><code class="language-sh">npm install -g @vue/cli
-</code></pre>
-
-<p>Verify your installation:</p>
-
-<pre><code class="language-sh">vue --version
-</code></pre>
+<ul>
+<li>You have a valid MIC account: <a href="https://startiot.mic.telenorconnexion.com/signup">https://startiot.mic.telenorconnexion.com/signup</a></li>
+<li>You are able to login to the MIC App Board: <a href="https://startiot.mic.telenorconnexion.com/login">https://startiot.mic.telenorconnexion.com/login</a></li>
+</ul>
 
 <div class="admonition note">
-<p class="admonition-title">Verify</p>
-<p>Verify that you can run <strong>node</strong>, <strong>npm</strong> and <strong>vue</strong> as commands in a terminal before moving on to Workshop 1.</p>
+<p class="admonition-title">App Board</p>
+<p>The <strong>App Board</strong> is the web interface of Managed IoT Cloud. It is used to provision devices and create dashboards, but it is completely optional to use. Login here: <a href="https://startiot.mic.telenorconnexion.com/login">https://startiot.mic.telenorconnexion.com/login</a></p>
 </div>
 
 
@@ -385,14 +405,14 @@
 
   <div class="next">
   
-      <a href="https://pwntus.github.io/mic-workshops/manifest/" title="Manifest">
+      <a href="https://pwntus.github.io/mic-workshops/workshop-1/" title="Workshop 1: Arduino IDE">
         <span class="direction">
           Next
         </span>
         <div class="page">
           <div class="stretch">
             <div class="title">
-              Manifest
+              Workshop 1: Arduino IDE
             </div>
           </div>
           <div class="button button-next" role="button" aria-label="Next">

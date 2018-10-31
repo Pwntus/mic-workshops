@@ -19,31 +19,19 @@
   </url>
   
   <url>
-    <loc>https://pwntus.github.io/mic-workshops/manifest/</loc>
-  </url>
-  
-  <url>
     <loc>https://pwntus.github.io/mic-workshops/workshop-1/</loc>
   </url>
   
   <url>
-    <loc>https://pwntus.github.io/mic-workshops/workshop-1/configure/</loc>
+    <loc>https://pwntus.github.io/mic-workshops/workshop-1/board-support/</loc>
   </url>
   
   <url>
-    <loc>https://pwntus.github.io/mic-workshops/workshop-1/first-api-call/</loc>
+    <loc>https://pwntus.github.io/mic-workshops/workshop-1/install-pre-core/</loc>
   </url>
   
   <url>
-    <loc>https://pwntus.github.io/mic-workshops/workshop-1/complete-code/</loc>
-  </url>
-  
-  <url>
-    <loc>https://pwntus.github.io/mic-workshops/workshop-1/authenticate-api-call/</loc>
-  </url>
-  
-  <url>
-    <loc>https://pwntus.github.io/mic-workshops/workshop-1/final-code/</loc>
+    <loc>https://pwntus.github.io/mic-workshops/workshop-1/include-lib/</loc>
   </url>
   
   <url>
@@ -51,43 +39,15 @@
   </url>
   
   <url>
-    <loc>https://pwntus.github.io/mic-workshops/workshop-2/login/</loc>
-  </url>
-  
-  <url>
-    <loc>https://pwntus.github.io/mic-workshops/workshop-2/list-thing-types/</loc>
-  </url>
-  
-  <url>
-    <loc>https://pwntus.github.io/mic-workshops/workshop-2/get-thing-type-info/</loc>
-  </url>
-  
-  <url>
-    <loc>https://pwntus.github.io/mic-workshops/workshop-2/find-things/</loc>
-  </url>
-  
-  <url>
-    <loc>https://pwntus.github.io/mic-workshops/workshop-2/observe-a-thing/</loc>
-  </url>
-  
-  <url>
     <loc>https://pwntus.github.io/mic-workshops/workshop-3/</loc>
   </url>
   
   <url>
-    <loc>https://pwntus.github.io/mic-workshops/workshop-3/configure-mqtt-client/</loc>
+    <loc>https://pwntus.github.io/mic-workshops/workshop-3/new-thing-type/</loc>
   </url>
   
   <url>
-    <loc>https://pwntus.github.io/mic-workshops/workshop-3/create-mqtt-client/</loc>
-  </url>
-  
-  <url>
-    <loc>https://pwntus.github.io/mic-workshops/workshop-3/add-event-listeners/</loc>
-  </url>
-  
-  <url>
-    <loc>https://pwntus.github.io/mic-workshops/workshop-3/final-code/</loc>
+    <loc>https://pwntus.github.io/mic-workshops/workshop-3/new-thing/</loc>
   </url>
   
   <url>
@@ -95,19 +55,19 @@
   </url>
   
   <url>
-    <loc>https://pwntus.github.io/mic-workshops/workshop-4/vuex/</loc>
+    <loc>https://pwntus.github.io/mic-workshops/workshop-3/initialize/</loc>
   </url>
   
   <url>
-    <loc>https://pwntus.github.io/mic-workshops/workshop-4/create-a-login-form/</loc>
+    <loc>https://pwntus.github.io/mic-workshops/workshop-3/loop/</loc>
   </url>
   
   <url>
-    <loc>https://pwntus.github.io/mic-workshops/workshop-4/logout/</loc>
+    <loc>https://pwntus.github.io/mic-workshops/workshop-3/receive/</loc>
   </url>
   
   <url>
-    <loc>https://pwntus.github.io/mic-workshops/workshop-4/final-code/</loc>
+    <loc>https://pwntus.github.io/mic-workshops/workshop-3/send/</loc>
   </url>
   
   <url>
@@ -115,40 +75,141 @@
   </url>
   
   <url>
-    <loc>https://pwntus.github.io/mic-workshops/arduino-mkr-nb-1500/</loc>
+    <loc>https://pwntus.github.io/mic-workshops/workshop-6/</loc>
   </url>
   
   <url>
-    <loc>https://pwntus.github.io/mic-workshops/arduino-mkr-nb-1500/provision/</loc>
+    <loc>https://pwntus.github.io/mic-workshops/api-get-started/</loc>
   </url>
   
   <url>
-    <loc>https://pwntus.github.io/mic-workshops/arduino-mkr-nb-1500/arduino-ide/</loc>
+    <loc>https://pwntus.github.io/mic-workshops/manifest/</loc>
   </url>
   
   <url>
-    <loc>https://pwntus.github.io/mic-workshops/arduino-mkr-nb-1500/programming-1/</loc>
+    <loc>https://pwntus.github.io/mic-workshops/api-workshop-1/</loc>
   </url>
   
   <url>
-    <loc>https://pwntus.github.io/mic-workshops/arduino-mkr-nb-1500/programming-2/</loc>
+    <loc>https://pwntus.github.io/mic-workshops/api-workshop-1/configure/</loc>
   </url>
   
   <url>
-    <loc>https://pwntus.github.io/mic-workshops/arduino-mkr-nb-1500/programming-3/</loc>
+    <loc>https://pwntus.github.io/mic-workshops/api-workshop-1/first-api-call/</loc>
   </url>
   
   <url>
-    <loc>https://pwntus.github.io/mic-workshops/arduino-mkr-nb-1500/programming-4/</loc>
+    <loc>https://pwntus.github.io/mic-workshops/api-workshop-1/complete-code/</loc>
   </url>
   
   <url>
-    <loc>https://pwntus.github.io/mic-workshops/arduino-mkr-nb-1500/</loc>
+    <loc>https://pwntus.github.io/mic-workshops/api-workshop-1/authenticate-api-call/</loc>
+  </url>
+  
+  <url>
+    <loc>https://pwntus.github.io/mic-workshops/api-workshop-1/final-code/</loc>
+  </url>
+  
+  <url>
+    <loc>https://pwntus.github.io/mic-workshops/api-workshop-2/</loc>
+  </url>
+  
+  <url>
+    <loc>https://pwntus.github.io/mic-workshops/api-workshop-2/login/</loc>
+  </url>
+  
+  <url>
+    <loc>https://pwntus.github.io/mic-workshops/api-workshop-2/list-thing-types/</loc>
+  </url>
+  
+  <url>
+    <loc>https://pwntus.github.io/mic-workshops/api-workshop-2/get-thing-type-info/</loc>
+  </url>
+  
+  <url>
+    <loc>https://pwntus.github.io/mic-workshops/api-workshop-2/find-things/</loc>
+  </url>
+  
+  <url>
+    <loc>https://pwntus.github.io/mic-workshops/api-workshop-2/observe-a-thing/</loc>
+  </url>
+  
+  <url>
+    <loc>https://pwntus.github.io/mic-workshops/api-workshop-3/</loc>
+  </url>
+  
+  <url>
+    <loc>https://pwntus.github.io/mic-workshops/api-workshop-3/configure-mqtt-client/</loc>
+  </url>
+  
+  <url>
+    <loc>https://pwntus.github.io/mic-workshops/api-workshop-3/create-mqtt-client/</loc>
+  </url>
+  
+  <url>
+    <loc>https://pwntus.github.io/mic-workshops/api-workshop-3/add-event-listeners/</loc>
+  </url>
+  
+  <url>
+    <loc>https://pwntus.github.io/mic-workshops/api-workshop-3/final-code/</loc>
+  </url>
+  
+  <url>
+    <loc>https://pwntus.github.io/mic-workshops/api-workshop-4/</loc>
+  </url>
+  
+  <url>
+    <loc>https://pwntus.github.io/mic-workshops/api-workshop-4/vuex/</loc>
+  </url>
+  
+  <url>
+    <loc>https://pwntus.github.io/mic-workshops/api-workshop-4/create-a-login-form/</loc>
+  </url>
+  
+  <url>
+    <loc>https://pwntus.github.io/mic-workshops/api-workshop-4/logout/</loc>
+  </url>
+  
+  <url>
+    <loc>https://pwntus.github.io/mic-workshops/api-workshop-4/final-code/</loc>
+  </url>
+  
+  <url>
+    <loc>https://pwntus.github.io/mic-workshops/api-workshop-5/</loc>
+  </url>
+  
+  <url>
+    <loc>https://pwntus.github.io/mic-workshops/api-workshop-1/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://pwntus.github.io/mic-workshops/api-workshop-2/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://pwntus.github.io/mic-workshops/api-workshop-3/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://pwntus.github.io/mic-workshops/api-workshop-4/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://pwntus.github.io/mic-workshops/api-workshop-5/</loc>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://pwntus.github.io/mic-workshops/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://pwntus.github.io/mic-workshops/get-started-api/</loc>
     <priority>0</priority>
   </url>
   
@@ -189,6 +250,11 @@
   
   <url>
     <loc>https://pwntus.github.io/mic-workshops/workshop-5/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://pwntus.github.io/mic-workshops/workshop-6/</loc>
     <priority>0</priority>
   </url>
   
