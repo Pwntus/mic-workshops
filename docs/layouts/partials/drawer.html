@@ -42,11 +42,11 @@
         </ul>
         {{ end }}
 
-        {{ if gt (len .Site.Menus.device) 0 }}
+        {{ if gt (len .Site.Menus.api) 0 }}
         <hr>
-        <span class="section">IoT Devices</span>
+        <span class="section">API Workshops</span>
         <ul>
-          {{ partial "nav_device" . }}
+          {{ partial "nav_api" . }}
         </ul>
         {{ end }}
 

@@ -53,40 +53,69 @@ publishDir="../public"
   weight = 100
 
 [[menu.main]]
-  name   = "Manifest"
-  url    = "manifest/"
-  weight = 150
-
-[[menu.main]]
-  name   = "Workshop 1: Create an API Client"
+  name   = "Workshop 1: Arduino IDE"
   url    = "workshop-1/"
   weight = 200
 
 [[menu.main]]
-  name   = "Workshop 2: Use the API"
+  name   = "Workshop 2: IMSI and IMEI"
   url    = "workshop-2/"
   weight = 300
 
 [[menu.main]]
-  name   = "Workshop 3: MQTT Realtime"
+  name   = "Workshop 3: Provision a Device"
   url    = "workshop-3/"
   weight = 400
 
 [[menu.main]]
-  name   = "Workshop 4: Vue.js"
+  name   = "Workshop 4: Program the Device"
   url    = "workshop-4/"
   weight = 500
 
 [[menu.main]]
-  name   = "Workshop 5: Vue.js Cont."
+  name   = "Workshop 5: Uplink Transform"
   url    = "workshop-5/"
   weight = 600
 
-[[menu.device]]
-  name   = "Arduino MKR NB 1500"
-  url    = "arduino-mkr-nb-1500/"
+[[menu.main]]
+  name   = "Workshop 6: App Board"
+  url    = "workshop-6/"
   weight = 700
 
+[[menu.api]]
+  name   = "Get Started with the API"
+  url    = "api-get-started/"
+  weight = 1100
+
+[[menu.api]]
+  name   = "Manifest"
+  url    = "manifest/"
+  weight = 1200
+
+[[menu.api]]
+  name   = "Workshop 1: Create an API Client"
+  url    = "api-workshop-1/"
+  weight = 1300
+
+[[menu.api]]
+  name   = "Workshop 2: Use the API"
+  url    = "api-workshop-2/"
+  weight = 1400
+
+[[menu.api]]
+  name   = "Workshop 3: MQTT Realtime"
+  url    = "api-workshop-3/"
+  weight = 1500
+
+[[menu.api]]
+  name   = "Workshop 4: Vue.js"
+  url    = "api-workshop-4/"
+  weight = 1600
+
+[[menu.api]]
+  name   = "Workshop 5: Vue.js Cont."
+  url    = "api-workshop-5/"
+  weight = 1700
 
 [blackfriday]
   smartypants = true

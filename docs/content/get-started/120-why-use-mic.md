@@ -34,4 +34,4 @@ MIC provides an intuitive way to structure your IoT infrastructure. `Thing Types
 
 `Users` and `Thing Types` can be sorted under `domains`. Use `sub-domains` to create a domain-tree of which users get different access to parts of your infrastructure.
 
-These are some of the features included in the Managed IoT Cloud suite. I hope you've got an overview of what's in store. Next we'll cover some of the prerequisites you'll need before continuing with the workshops.
+These are some of the features included in the Managed IoT Cloud suite. I hope you've got an overview of what's in store. Next we'll start by setting up an IoT device.

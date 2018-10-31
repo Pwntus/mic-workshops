@@ -8,60 +8,13 @@ menu:
     identifier: Prerequisites
 ---
 
-The RESTful API makes it possible to use a wide variety of technologies to utilize the MIC platform. As long as you can make HTTP-calls you're good to go.
+The [Arduino MKR NB 1500](https://store.arduino.cc/arduino-mkr-nb-1500) comes fully compatible with Narrow Band IoT NB classes and LTE CAT M1 networks. In this workshop we'll go through how to provision a device in MIC and how to program the Arduino MKR NB 1500 to send data using the open `telenor.iot` APN over the Telenor NB-IoT network.
 
-In the following workshops we'll use [Node.js](https://nodejs.org/) with the [Vue.js](https://vuejs.org/) JavaScript framework. It's fast to get started with and building a functioning application.
+Before continuing, make sure that:
 
-## Installing Node.js
+* You have a valid MIC account: https://startiot.mic.telenorconnexion.com/signup
+* You are able to login to the MIC App Board: https://startiot.mic.telenorconnexion.com/login
 
-The easies way of getting Node.js is to install the [Node Version Manager (NVM)](https://github.com/creationix/nvm). Head over to their GitHub page for instructions on how to install it for your preferred platform.
-
-If running a Linux distribution it should be enough running the following command:
-
-```sh
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
-```
-
-Verify your installation:
-
-```sh
-nvm --version
-```
-
-Download, compile and install the latest release of Node.js:
-
-```sh
-nvm install node
-```
-
-Verify your Node.js installation:
-
-```sh
-node --version
-```
-
-Verify your [Node Package Manager (NPM)](https://www.npmjs.com/) installation:
-
-```sh
-npm --version
-```
-
-## Installing Vue.js
-
-Vue.js is a lightweight JavaScript framework similar to what React and Angular are. We'll use it to scaffold and create web applications in no time.
-
-Install the [Vue CLI](https://cli.vuejs.org/guide/installation.html):
-
-```sh
-npm install -g @vue/cli
-```
-
-Verify your installation:
-
-```sh
-vue --version
-```
-
-{{< note title="Verify" >}}
-Verify that you can run **node**, **npm** and **vue** as commands in a terminal before moving on to Workshop 1.
+{{< note title="App Board" >}}
+The **App Board** is the web interface of Managed IoT Cloud. It is used to provision devices and create dashboards, but it is completely optional to use. Login here: https://startiot.mic.telenorconnexion.com/login
 {{< /note >}}

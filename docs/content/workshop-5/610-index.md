@@ -1,25 +1,25 @@
 ---
-title: "Workshop 5: Vue.js Cont."
+title: "Workshop 5: Uplink Transform"
 url: workshop-5/
 weight: 610
 ---
 
-It is advised to have general knowledge of how Vue.js + Vuex works before proceeding.
+To edit the uplink transfor for your Thing Type, select your Thing Type and click the pencil button.
 
-Open a clean directory and clone the working repository (if not already done):
+Insert the following JavaScript code into the Uplink Transform section:
 
-```sh
-git clone https://github.com/Pwntus/mic-workshops.git
+```javascript
+var variables = payload.toString('ascii').split(",");
+var tmpFloat = parseFloat(variables[1]);
+var humFloat = parseFloat(variables[2]);
+
+return {
+   payload: payload.toString('utf-8'),
+   text: variables[0],
+   humidity: humFloat,
+   temperature: tmpFloat,
+   timestamp: + new Date()
+};
 ```
 
-Next, navigate to `mic-workshops/workshops/05` and run `npm i`:
-
-```sh
-cd mic-workshops/workshops/05 && npm i
-```
-
-Wait for it to complete before continuing.
-
-{{< warning title="Under Construction" >}}
-Please wait...
-{{< /warning >}}
+![Uplink Transform](/images/arduino-mkr-nb-1500-10-uplink-transform.jpg "Uplink Transform")

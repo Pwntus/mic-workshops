@@ -1,21 +1,9 @@
 ---
-title: "Workshop 1: Create an API Client"
+title: "Workshop 1: Arduino IDE"
 url: workshop-1/
 weight: 210
 ---
 
-Our first workshop will focus on creating a HTTP client with necessary configurations to make both unauthenticated and authenticated requests.
+The Arduino IDE (Integrated Development Environment) is used to easily write code and upload it to a board. This workshop will guide you through how to setup the IDE for the Arduino MKR NB 1500 board we'll be using during future workshops.
 
-Open a clean directory and clone the working repository:
-
-```sh
-git clone https://github.com/Pwntus/mic-workshops.git
-```
-
-Next, navigate to `mic-workshops/workshops/01` and run `npm i`:
-
-```sh
-cd mic-workshops/workshops/01 && npm i
-```
-
-Wait for it to complete before continuing.
+Download the latest [Arduino IDE](https://www.arduino.cc/en/Main/Software) version for your platform and install.
